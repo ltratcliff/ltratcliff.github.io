@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Site</title>
+    <link>http://ltratcliff.com/</link>
+    <description>Recent content on My New Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Nov 2021 14:45:52 -0400</lastBuildDate><atom:link href="http://ltratcliff.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Post</title>
+      <link>http://ltratcliff.com/posts/first-post/</link>
+      <pubDate>Thu, 04 Nov 2021 14:45:52 -0400</pubDate>
+      
+      <guid>http://ltratcliff.com/posts/first-post/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
