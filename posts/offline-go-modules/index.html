@@ -6,7 +6,7 @@
     
     <title>Offline Go Modules | Tom&#39;s site</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="golang offline module dependencies download Using go mod vendor 0 - With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  0bis - New module  create a folder on the internet PC create a go module : go mod init test  1 - Download dependencies via vendor folder  create a offline_modules.go file :  package offline_modules func main() {}  add the dependencies you want to download (use _) :  package offline_modules import ( _ &quot;github.">
+    <meta name="description" content="Using go mod vendor With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  New module  create a folder on machine with internet access create a go module : go mod init offline  Download dependencies via vendor folder  create a offline_modules.go file :  touch offline_modules.go  add the dependencies you want to download (use _) :  package offline_modules import ( _ &#34;github.">
     <meta name="generator" content="Hugo 0.80.0" />
     
     
@@ -27,23 +27,23 @@
     
     
     <meta property="og:title" content="Offline Go Modules" />
-<meta property="og:description" content="golang offline module dependencies download Using go mod vendor 0 - With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  0bis - New module  create a folder on the internet PC create a go module : go mod init test  1 - Download dependencies via vendor folder  create a offline_modules.go file :  package offline_modules func main() {}  add the dependencies you want to download (use _) :  package offline_modules import ( _ &quot;github." />
+<meta property="og:description" content="Using go mod vendor With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  New module  create a folder on machine with internet access create a go module : go mod init offline  Download dependencies via vendor folder  create a offline_modules.go file :  touch offline_modules.go  add the dependencies you want to download (use _) :  package offline_modules import ( _ &#34;github." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://ltratcliff.com/posts/offline-go-modules/" />
 <meta property="article:published_time" content="2021-11-04T15:11:42-04:00" />
 <meta property="article:modified_time" content="2021-11-04T15:11:42-04:00" />
 <meta itemprop="name" content="Offline Go Modules">
-<meta itemprop="description" content="golang offline module dependencies download Using go mod vendor 0 - With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  0bis - New module  create a folder on the internet PC create a go module : go mod init test  1 - Download dependencies via vendor folder  create a offline_modules.go file :  package offline_modules func main() {}  add the dependencies you want to download (use _) :  package offline_modules import ( _ &quot;github.">
+<meta itemprop="description" content="Using go mod vendor With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  New module  create a folder on machine with internet access create a go module : go mod init offline  Download dependencies via vendor folder  create a offline_modules.go file :  touch offline_modules.go  add the dependencies you want to download (use _) :  package offline_modules import ( _ &#34;github.">
 <meta itemprop="datePublished" content="2021-11-04T15:11:42-04:00" />
 <meta itemprop="dateModified" content="2021-11-04T15:11:42-04:00" />
-<meta itemprop="wordCount" content="138">
+<meta itemprop="wordCount" content="117">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Offline Go Modules"/>
-<meta name="twitter:description" content="golang offline module dependencies download Using go mod vendor 0 - With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  0bis - New module  create a folder on the internet PC create a go module : go mod init test  1 - Download dependencies via vendor folder  create a offline_modules.go file :  package offline_modules func main() {}  add the dependencies you want to download (use _) :  package offline_modules import ( _ &quot;github."/>
+<meta name="twitter:description" content="Using go mod vendor With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  New module  create a folder on machine with internet access create a go module : go mod init offline  Download dependencies via vendor folder  create a offline_modules.go file :  touch offline_modules.go  add the dependencies you want to download (use _) :  package offline_modules import ( _ &#34;github."/>
 
 	
   </head>
@@ -159,50 +159,46 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="golang-offline-module-dependencies-download">golang offline module dependencies download</h1>
-<h2 id="using-go-mod-vendor">Using go mod vendor</h2>
-<h3 id="0---with-an-existing-module">0 - With an existing module</h3>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="using-go-mod-vendor">Using go mod vendor</h1>
+<h3 id="with-an-existing-module">With an existing module</h3>
 <ul>
 <li>copy <code>go.mod</code> and <code>go.sum</code> files from the offline PC to the internet PC</li>
 </ul>
-<h3 id="0bis---new-module">0bis - New module</h3>
+<h3 id="new-module">New module</h3>
 <ul>
-<li>create a folder on the internet PC</li>
-<li>create a go module : <code>go mod init test</code></li>
+<li>create a folder on machine with internet access</li>
+<li>create a go module : <code>go mod init offline</code></li>
 </ul>
-<h3 id="1---download-dependencies-via-vendor-folder">1 - Download dependencies via vendor folder</h3>
+<h3 id="download-dependencies-via-vendor-folder">Download dependencies via vendor folder</h3>
 <ul>
 <li>create a <code>offline_modules.go</code> file :</li>
 </ul>
-<pre><code>package offline_modules
-
-func main() {}
-</code></pre><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">touch offline_modules.go
+</code></pre></div><ul>
 <li>add the dependencies you want to download (use <code>_</code>) :</li>
 </ul>
-<pre><code>package offline_modules
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">offline_modules</span>
 
-import (
-	_ &quot;github.com/gorilla/mux&quot;
-	_ &quot;github.com/sirupsen/logrus&quot;
+<span style="color:#f92672">import</span> (
+	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;github.com/gorilla/mux&#34;</span>
+	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;github.com/sirupsen/logrus&#34;</span>
 )
 
-func main() {}
-</code></pre><ul>
-<li>
-<p>run <code>go mod vendor</code></p>
-</li>
-<li>
-<p>the vendor folder should have new folders in it representing dependencies</p>
-</li>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {}
+</code></pre></div><ul>
+<li>To download dependencies, run:</li>
 </ul>
-<h3 id="2---back-to-offline">2 - Back to offline</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go mod vendor
+</code></pre></div><ul>
+<li>the vendor folder should have new folders in it representing dependencies</li>
+</ul>
+<h3 id="back-to-offline">Back to offline</h3>
 <ul>
-<li>copy <code>go.mod</code>, <code>go.sum</code> and <code>vendor</code></li>
-<li>paste them on your offline PC, edit <code>go.mod</code> module name if necessary</li>
-<li>run your go commands with the flag <code>-mod=vendor</code> like <code>go run -mod=vendor main .go</code></li>
+<li>copy <code>go.mod</code>, <code>go.sum</code> and <code>vendor</code> directory to offline machine</li>
+<li>run your go commands with the flag <code>-mod=vendor</code> like:</li>
 </ul>
-<ul class="pa0">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">run</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">mod</span>=<span style="color:#a6e22e">vendor</span> <span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>
+</code></pre></div><ul class="pa0">
   
 </ul>
 <div class="mt6 instapaper_ignoref">
@@ -211,7 +207,21 @@ func main() {}
       </div>
     </div>
 
-    <aside class="w-30-l mt6-l">
+    <aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">What&#39;s in this posts</p>
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#with-an-existing-module">With an existing module</a></li>
+        <li><a href="#new-module">New module</a></li>
+        <li><a href="#download-dependencies-via-vendor-folder">Download dependencies via vendor folder</a></li>
+        <li><a href="#back-to-offline">Back to offline</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
 
 
 

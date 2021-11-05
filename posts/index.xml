@@ -13,7 +13,7 @@
       <pubDate>Thu, 04 Nov 2021 15:11:42 -0400</pubDate>
       
       <guid>http://ltratcliff.com/posts/offline-go-modules/</guid>
-      <description>golang offline module dependencies download Using go mod vendor 0 - With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  0bis - New module  create a folder on the internet PC create a go module : go mod init test  1 - Download dependencies via vendor folder  create a offline_modules.go file :  package offline_modules func main() {}  add the dependencies you want to download (use _) :  package offline_modules import ( _ &amp;quot;github.</description>
+      <description>Using go mod vendor With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  New module  create a folder on machine with internet access create a go module : go mod init offline  Download dependencies via vendor folder  create a offline_modules.go file :  touch offline_modules.go  add the dependencies you want to download (use _) :  package offline_modules import ( _ &amp;#34;github.</description>
     </item>
     
     <item>
