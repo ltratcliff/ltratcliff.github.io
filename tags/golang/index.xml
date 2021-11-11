@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TR</title>
-    <link>http://ltratcliff.com/</link>
-    <description>Recent content on TR</description>
+    <title>golang on TR</title>
+    <link>http://ltratcliff.com/tags/golang/</link>
+    <description>Recent content in golang on TR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Nov 2021 12:25:00 -0500</lastBuildDate><atom:link href="http://ltratcliff.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Nov 2021 13:40:19 -0400</lastBuildDate><atom:link href="http://ltratcliff.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fun With Hugo</title>
       <link>http://ltratcliff.com/posts/funwithhugo/</link>
@@ -25,17 +25,6 @@ Recommendations This youtube playlist by giraffe academy was a great start. Shou
       
       <guid>http://ltratcliff.com/posts/offline-go-modules/</guid>
       <description>Using go mod vendor With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  New module  create a folder on machine with internet access create a go module : go mod init offline  Download dependencies via vendor folder  create a offline_modules.go file :  touch offline_modules.go  add the dependencies you want to download (use _) :  package offline_modules import ( _ &amp;#34;github.</description>
-    </item>
-    
-    <item>
-      <title>First Post</title>
-      <link>http://ltratcliff.com/posts/first-post/</link>
-      <pubDate>Thu, 04 Nov 2021 14:45:52 -0400</pubDate>
-      
-      <guid>http://ltratcliff.com/posts/first-post/</guid>
-      <description>About me Born in Miami Florida and raised in Fort Lauderdale. After High-School I went to FSU to study computer science.
-After four years of study I left FSU and joined the Marines. In the Marines I worked on electronic equiptment for a SIGINT Battalion.
-After the Marines I became a defense contractor and started working as Systems Administrator for an AirForce GEOINT squadron in the AF-DCGS. I did this for 10 years where I worked with some of the smartest people in my career.</description>
     </item>
     
   </channel>

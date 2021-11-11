@@ -5,6 +5,16 @@
     <link>http://ltratcliff.com/categories/</link>
     <description>Recent content in Categories on TR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://ltratcliff.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Nov 2021 13:40:19 -0400</lastBuildDate><atom:link href="http://ltratcliff.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang</title>
+      <link>http://ltratcliff.com/categories/golang/</link>
+      <pubDate>Sat, 06 Nov 2021 13:40:19 -0400</pubDate>
+      
+      <guid>http://ltratcliff.com/categories/golang/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -5,6 +5,43 @@
     <link>http://ltratcliff.com/tags/</link>
     <description>Recent content in Tags on TR</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://ltratcliff.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Nov 2021 13:40:19 -0400</lastBuildDate><atom:link href="http://ltratcliff.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang</title>
+      <link>http://ltratcliff.com/tags/golang/</link>
+      <pubDate>Sat, 06 Nov 2021 13:40:19 -0400</pubDate>
+      
+      <guid>http://ltratcliff.com/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>http://ltratcliff.com/tags/hugo/</link>
+      <pubDate>Sat, 06 Nov 2021 13:40:19 -0400</pubDate>
+      
+      <guid>http://ltratcliff.com/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>modules</title>
+      <link>http://ltratcliff.com/tags/modules/</link>
+      <pubDate>Thu, 04 Nov 2021 15:11:42 -0400</pubDate>
+      
+      <guid>http://ltratcliff.com/tags/modules/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>offline</title>
+      <link>http://ltratcliff.com/tags/offline/</link>
+      <pubDate>Thu, 04 Nov 2021 15:11:42 -0400</pubDate>
+      
+      <guid>http://ltratcliff.com/tags/offline/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
