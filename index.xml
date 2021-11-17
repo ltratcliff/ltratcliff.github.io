@@ -6,7 +6,18 @@
     <description>Recent content on TR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Nov 2021 12:25:00 -0500</lastBuildDate><atom:link href="http://ltratcliff.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Nov 2021 19:08:27 -0500</lastBuildDate><atom:link href="http://ltratcliff.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Glances on SilverBlue after an update</title>
+      <link>http://ltratcliff.com/posts/glances_on_silverblue/</link>
+      <pubDate>Thu, 11 Nov 2021 19:08:27 -0500</pubDate>
+      
+      <guid>http://ltratcliff.com/posts/glances_on_silverblue/</guid>
+      <description>Just updated from silverblue 34 to 35 with:
+rpm-ostree rebase fedora:fedora/35/x86_64/silverblue The update went very smooth, however there were a few minor caveats.
+ My Fedora 34 toolbox was inop Had to add/update to a fedora 35 container created ansible script to make migration easier  --- - hosts: localhost become: true gather_facts: false vars_files: - software.yml tasks: - name: Install software dnf: name: &amp;#34;{{ software }}&amp;#34; state: latest software.yml:</description>
+    </item>
+    
     <item>
       <title>Fun With Hugo</title>
       <link>http://ltratcliff.com/posts/funwithhugo/</link>

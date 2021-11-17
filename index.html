@@ -37,7 +37,7 @@
 <meta property="og:description" content="A Blog on Software Experiences, Troubleshooting, Fix Actions and More!" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://ltratcliff.com/" />
-<meta property="og:updated_time" content="2021-11-08T12:25:00-05:00" />
+<meta property="og:updated_time" content="2021-11-11T19:08:27-05:00" />
 <meta itemprop="name" content="TR">
 <meta itemprop="description" content="A Blog on Software Experiences, Troubleshooting, Fix Actions and More!">
 <meta name="twitter:card" content="summary"/>
@@ -199,6 +199,32 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/glances_on_silverblue/" class="color-inherit dim link">
+            Glances on SilverBlue after an update
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Just updated from silverblue 34 to 35 with:
+rpm-ostree rebase fedora:fedora/35/x86_64/silverblue The update went very smooth, however there were a few minor caveats.
+ My Fedora 34 toolbox was inop Had to add/update to a fedora 35 container created ansible script to make migration easier  --- - hosts: localhost become: true gather_facts: false vars_files: - software.yml tasks: - name: Install software dnf: name: &#34;{{ software }}&#34; state: latest software.yml:
+        </div>
+          <a href="/posts/glances_on_silverblue/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/funwithhugo/" class="color-inherit dim link">
             Fun With Hugo
             </a>
@@ -241,34 +267,25 @@ Recommendations This youtube playlist by giraffe academy was a great start. Shou
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/first-post/" class="color-inherit dim link">
-            First Post
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          About me Born in Miami Florida and raised in Fort Lauderdale. After High-School I went to FSU to study computer science.
-After four years of study I left FSU and joined the Marines. In the Marines I worked on electronic equiptment for a SIGINT Battalion.
-After the Marines I became a defense contractor and started working as Systems Administrator for an AirForce GEOINT squadron in the AF-DCGS. I did this for 10 years where I worked with some of the smartest people in my career.
-        </div>
-          <a href="/posts/first-post/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
+      
+      <section class="w-100">
+        <h1 class="f3">More</h1>
+        
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/first-post/" class="link black dim">
+              First Post
+            </a>
+          </h2>
+        
+
+        
+        
+          <a href="/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc">All Posts</a>
+        
+        </section>
       
 
       </div>

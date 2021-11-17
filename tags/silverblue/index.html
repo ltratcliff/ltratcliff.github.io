@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>TR</title>
+    <title>silverblue | TR</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="A Blog on Software Experiences, Troubleshooting, Fix Actions and More!">
     <meta name="generator" content="Hugo 0.80.0" />
@@ -28,20 +28,20 @@
 
     
     
-      <link href="/categories/index.xml" rel="alternate" type="application/rss+xml" title="TR" />
-      <link href="/categories/index.xml" rel="feed" type="application/rss+xml" title="TR" />
+      <link href="/tags/silverblue/index.xml" rel="alternate" type="application/rss+xml" title="TR" />
+      <link href="/tags/silverblue/index.xml" rel="feed" type="application/rss+xml" title="TR" />
       
     
     
-    <meta property="og:title" content="Categories" />
+    <meta property="og:title" content="silverblue" />
 <meta property="og:description" content="A Blog on Software Experiences, Troubleshooting, Fix Actions and More!" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://ltratcliff.com/categories/" />
+<meta property="og:url" content="http://ltratcliff.com/tags/silverblue/" />
 <meta property="og:updated_time" content="2021-11-11T19:08:27-05:00" />
-<meta itemprop="name" content="Categories">
+<meta itemprop="name" content="silverblue">
 <meta itemprop="description" content="A Blog on Software Experiences, Troubleshooting, Fix Actions and More!">
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Categories"/>
+<meta name="twitter:title" content="silverblue"/>
 <meta name="twitter:description" content="A Blog on Software Experiences, Troubleshooting, Fix Actions and More!"/>
 
 	
@@ -153,7 +153,7 @@
       <div class="tc-l pv4 pv6-l ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
 	  
-          Categories
+          silverblue
 	  
         </h1>
         
@@ -164,21 +164,15 @@
 
     <main class="pb7" role="main">
       
-    
   <article class="cf pa3 pa4-m pa4-l">
     <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
-      
+      <p>Below you will find pages that utilize the taxonomy term “silverblue”</p>
     </div>
   </article>
-  <div class="mw8 center">
-    <section class="ph4">
+  <div class="mw8 center">    
+    <section class="flex-ns flex-wrap justify-around mt5">
       
-        <h2 class="f1">
-          <a href="/categories/fedora" class="link blue hover-black">
-            Category: fedora
-          </a>
-        </h2>
-        
+        <div class="relative w-100  mb4 bg-white">
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
@@ -195,70 +189,7 @@ rpm-ostree rebase fedora:fedora/35/x86_64/silverblue The update went very smooth
   </div>
 </div>
 
-        
-      
-        <h2 class="f1">
-          <a href="/categories/golang" class="link blue hover-black">
-            Category: golang
-          </a>
-        </h2>
-        
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/funwithhugo/" class="link black dim">
-        Fun With Hugo
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I&rsquo;ve been digging the Hugo static website generator. Getting up and running quickly using github.io pages and Hugo was breeze. Here&rsquo;s a few things I&rsquo;ve learned over the last 2-3 days playing with Hugo
-Recommendations This youtube playlist by giraffe academy was a great start. Shout out to Mike Dane for making this content
-   Quickstart The Official docs: here help get you setup with installation, and a new project
-    </div>
-  </div>
-</div>
-
-        
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/offline-go-modules/" class="link black dim">
-        Offline Go Modules
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Using go mod vendor With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  New module  create a folder on machine with internet access create a go module : go mod init offline  Download dependencies via vendor folder  create a offline_modules.go file :  touch offline_modules.go  add the dependencies you want to download (use _) :  package offline_modules import ( _ &#34;github.
-    </div>
-  </div>
-</div>
-
-        
-      
-        <h2 class="f1">
-          <a href="/categories/silverblue" class="link blue hover-black">
-            Category: silverblue
-          </a>
-        </h2>
-        
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/glances_on_silverblue/" class="link black dim">
-        Glances on SilverBlue after an update
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Just updated from silverblue 34 to 35 with:
-rpm-ostree rebase fedora:fedora/35/x86_64/silverblue The update went very smooth, however there were a few minor caveats.
- My Fedora 34 toolbox was inop Had to add/update to a fedora 35 container created ansible script to make migration easier  --- - hosts: localhost become: true gather_facts: false vars_files: - software.yml tasks: - name: Install software dnf: name: &#34;{{ software }}&#34; state: latest software.yml:
-    </div>
-  </div>
-</div>
-
-        
+        </div>
       
     </section>
   </div>

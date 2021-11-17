@@ -6,7 +6,25 @@
     <description>Recent content in Categories on TR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Nov 2021 13:40:19 -0400</lastBuildDate><atom:link href="http://ltratcliff.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Nov 2021 19:08:27 -0500</lastBuildDate><atom:link href="http://ltratcliff.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fedora</title>
+      <link>http://ltratcliff.com/categories/fedora/</link>
+      <pubDate>Thu, 11 Nov 2021 19:08:27 -0500</pubDate>
+      
+      <guid>http://ltratcliff.com/categories/fedora/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>silverblue</title>
+      <link>http://ltratcliff.com/categories/silverblue/</link>
+      <pubDate>Thu, 11 Nov 2021 19:08:27 -0500</pubDate>
+      
+      <guid>http://ltratcliff.com/categories/silverblue/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>golang</title>
       <link>http://ltratcliff.com/categories/golang/</link>
