@@ -4,7 +4,56 @@
   
   <url>
     <loc>http://ltratcliff.com/categories/</loc>
-    <lastmod>2021-11-11T19:08:27-05:00</lastmod>
+    <lastmod>2021-12-06T20:48:44-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ltratcliff.com/posts/github-io/</loc>
+    <lastmod>2021-12-06T20:48:44-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ltratcliff.com/tags/github/</loc>
+    <lastmod>2021-12-06T20:48:44-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ltratcliff.com/categories/github/</loc>
+    <lastmod>2021-12-06T20:48:44-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ltratcliff.com/posts/</loc>
+    <lastmod>2021-12-06T20:48:44-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ltratcliff.com/tags/</loc>
+    <lastmod>2021-12-06T20:48:44-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ltratcliff.com/</loc>
+    <lastmod>2021-12-06T20:48:44-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://ltratcliff.com/tags/website/</loc>
+    <lastmod>2021-12-06T20:48:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,13 +80,6 @@
   </url>
   
   <url>
-    <loc>http://ltratcliff.com/posts/</loc>
-    <lastmod>2021-11-11T19:08:27-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://ltratcliff.com/tags/python/</loc>
     <lastmod>2021-11-11T19:08:27-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -53,20 +95,6 @@
   
   <url>
     <loc>http://ltratcliff.com/categories/silverblue/</loc>
-    <lastmod>2021-11-11T19:08:27-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://ltratcliff.com/tags/</loc>
-    <lastmod>2021-11-11T19:08:27-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://ltratcliff.com/</loc>
     <lastmod>2021-11-11T19:08:27-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
