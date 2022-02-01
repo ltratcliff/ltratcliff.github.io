@@ -1,138 +1,100 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>http://ltratcliff.com/categories/</loc>
     <lastmod>2021-11-11T19:08:27-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/categories/fedora/</loc>
     <lastmod>2021-11-11T19:08:27-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/tags/glances/</loc>
     <lastmod>2021-11-11T19:08:27-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/posts/glances_on_silverblue/</loc>
     <lastmod>2021-11-11T19:08:27-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/posts/</loc>
     <lastmod>2021-11-11T19:08:27-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/tags/python/</loc>
     <lastmod>2021-11-11T19:08:27-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/tags/silverblue/</loc>
     <lastmod>2021-11-11T19:08:27-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/categories/silverblue/</loc>
     <lastmod>2021-11-11T19:08:27-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/tags/</loc>
     <lastmod>2021-11-11T19:08:27-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/</loc>
     <lastmod>2021-11-11T19:08:27-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/about/</loc>
     <lastmod>2021-11-08T12:25:00-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/posts/funwithhugo/</loc>
     <lastmod>2021-11-06T13:40:19-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/tags/golang/</loc>
     <lastmod>2021-11-06T13:40:19-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/categories/golang/</loc>
     <lastmod>2021-11-06T13:40:19-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/tags/hugo/</loc>
     <lastmod>2021-11-06T13:40:19-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/tags/modules/</loc>
     <lastmod>2021-11-04T15:11:42-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/tags/offline/</loc>
     <lastmod>2021-11-04T15:11:42-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/posts/offline-go-modules/</loc>
     <lastmod>2021-11-04T15:11:42-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://ltratcliff.com/posts/first-post/</loc>
     <lastmod>2021-11-04T14:45:52-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-  
 </urlset>
