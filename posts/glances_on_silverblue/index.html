@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9T1HNDM5K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H9T1HNDM5K');
+</script>
+
+  
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -52,17 +64,6 @@ rpm-ostree rebase fedora:fedora/35/x86_64/silverblue The update went very smooth
  My Fedora 34 toolbox was inop Had to add/update to a fedora 35 container created ansible script to make migration easier  --- - hosts: localhost become: true gather_facts: false vars_files: - software.yml tasks: - name: Install software dnf: name: &#34;{{ software }}&#34; state: latest software.yml:"/>
 
       
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-H9T1HNDM5K', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
     
 	
   </head>
