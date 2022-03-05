@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github on TR</title>
+    <link>http://ltratcliff.com/tags/github/</link>
+    <description>Recent content in github on TR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Dec 2021 20:48:44 -0500</lastBuildDate><atom:link href="http://ltratcliff.com/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Free Web Hosting with GitHub Pages</title>
+      <link>http://ltratcliff.com/posts/github-io/</link>
+      <pubDate>Mon, 06 Dec 2021 20:48:44 -0500</pubDate>
+      
+      <guid>http://ltratcliff.com/posts/github-io/</guid>
+      <description>Github.io Sign up and create a github.io repo/page here: github.io
+Custom Domain Purchase a custom domain. I chose google domains Google Domains
+Once purchased we need to setup DNS
+Google Domains DNS We need to create an A record to point our new domain to the github.io IPs
+To get the github.io IPs we can use nslookup
+nslookup ltratcliff.github.io There&amp;rsquo;s a handful of IP addresses here, but we are not concerned with the IPV6 ones (2606:50c0:etc.</description>
+    </item>
+    
+  </channel>
+</rss>
