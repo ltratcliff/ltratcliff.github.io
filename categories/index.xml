@@ -6,7 +6,16 @@
     <description>Recent content in Categories on TR</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Dec 2021 20:48:44 -0500</lastBuildDate><atom:link href="http://ltratcliff.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jan 2022 08:55:17 -0400</lastBuildDate><atom:link href="http://ltratcliff.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backup</title>
+      <link>http://ltratcliff.com/categories/backup/</link>
+      <pubDate>Sun, 23 Jan 2022 08:55:17 -0400</pubDate>
+      
+      <guid>http://ltratcliff.com/categories/backup/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>github</title>
       <link>http://ltratcliff.com/categories/github/</link>

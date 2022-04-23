@@ -2,8 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://ltratcliff.com/categories/backup/</loc>
+    <lastmod>2022-01-23T08:55:17-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://ltratcliff.com/categories/</loc>
-    <lastmod>2021-12-06T20:48:44-05:00</lastmod>
+    <lastmod>2022-01-23T08:55:17-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/tags/dvd/</loc>
+    <lastmod>2022-01-23T08:55:17-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/tags/ffmpeg/</loc>
+    <lastmod>2022-01-23T08:55:17-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/tags/media/</loc>
+    <lastmod>2022-01-23T08:55:17-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/posts/media-backup/</loc>
+    <lastmod>2022-01-23T08:55:17-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/posts/</loc>
+    <lastmod>2022-01-23T08:55:17-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/tags/</loc>
+    <lastmod>2022-01-23T08:55:17-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/</loc>
+    <lastmod>2022-01-23T08:55:17-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -18,21 +58,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>http://ltratcliff.com/categories/github/</loc>
-    <lastmod>2021-12-06T20:48:44-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://ltratcliff.com/posts/</loc>
-    <lastmod>2021-12-06T20:48:44-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://ltratcliff.com/tags/</loc>
-    <lastmod>2021-12-06T20:48:44-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://ltratcliff.com/</loc>
     <lastmod>2021-12-06T20:48:44-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

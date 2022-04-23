@@ -185,6 +185,22 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/media-backup/" class="link black dim">
+        Media Backup
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Backup Media From DVD to Filesystem  Get sector size and count of the DVD  sudo isosize -x /dev/sr0 Write the contents of the DVD to an ISO  sudo dd if=/dev/sr0 of=dvd.iso bs=2048 count=2131422 status=progress Mount the ISO and inspect the contents  sudo mount -o loop dvd.iso /mnt/iso ls /mnt/iso/VIDEO_TS/ Use FFmpeg to convert VOB to preferred format   For lossless
+ ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params lossless=1 ~/mycoolvid.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/github-io/" class="link black dim">
         Free Web Hosting with GitHub Pages
       </a>
