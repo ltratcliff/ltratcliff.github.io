@@ -46,14 +46,14 @@
  ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params lossless=1 ~/mycoolvid." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://ltratcliff.com/posts/media-backup/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-01-23T08:55:17-04:00" />
-<meta property="article:modified_time" content="2022-01-23T08:55:17-04:00" />
+<meta property="article:published_time" content="2022-03-23T08:55:17-04:00" />
+<meta property="article:modified_time" content="2022-03-23T08:55:17-04:00" />
 
 <meta itemprop="name" content="Media Backup">
 <meta itemprop="description" content="Backup Media From DVD to Filesystem  Get sector size and count of the DVD  sudo isosize -x /dev/sr0 Write the contents of the DVD to an ISO  sudo dd if=/dev/sr0 of=dvd.iso bs=2048 count=2131422 status=progress Mount the ISO and inspect the contents  sudo mount -o loop dvd.iso /mnt/iso ls /mnt/iso/VIDEO_TS/ Use FFmpeg to convert VOB to preferred format   For lossless
- ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params lossless=1 ~/mycoolvid."><meta itemprop="datePublished" content="2022-01-23T08:55:17-04:00" />
-<meta itemprop="dateModified" content="2022-01-23T08:55:17-04:00" />
-<meta itemprop="wordCount" content="192">
+ ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params lossless=1 ~/mycoolvid."><meta itemprop="datePublished" content="2022-03-23T08:55:17-04:00" />
+<meta itemprop="dateModified" content="2022-03-23T08:55:17-04:00" />
+<meta itemprop="wordCount" content="246">
 <meta itemprop="keywords" content="media,dvd,ffmpeg," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Media Backup"/>
 <meta name="twitter:description" content="Backup Media From DVD to Filesystem  Get sector size and count of the DVD  sudo isosize -x /dev/sr0 Write the contents of the DVD to an ISO  sudo dd if=/dev/sr0 of=dvd.iso bs=2048 count=2131422 status=progress Mount the ISO and inspect the contents  sudo mount -o loop dvd.iso /mnt/iso ls /mnt/iso/VIDEO_TS/ Use FFmpeg to convert VOB to preferred format   For lossless
@@ -223,7 +223,7 @@
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2022-01-23T08:55:17-04:00">January 23, 2022</time>
+      <time class="f6 mv4 dib tracked" datetime="2022-03-23T08:55:17-04:00">March 23, 2022</time>
       
 
       
@@ -262,7 +262,22 @@ ls /mnt/iso/VIDEO_TS/
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -1 *VOB | tr <span style="color:#e6db74">&#39;\n&#39;</span> <span style="color:#e6db74">&#39;|&#39;</span>
 ffmpeg -i concat:<span style="color:#e6db74">&#34;VTS_01_1.VOB|VTS_02_1.VOB|VTS_03_1.VOB|VTS_04_1.VOB|VTS_05_1.VOB|VTS_06_1.VOB|VTS_07_1.VOB|VTS_08_1.VOB|VTS_09_1.VOB|VTS_10_1.VOB|VTS_11_1.VOB|VTS_12_1.VOB|VTS_13_1.VOB|VTS_14_1.VOB|VTS_15_1.VOB|VTS_16_1.VOB|VTS_17_1.VOB&#34;</span> -c:a copy -c:v libx265 -preset ultrafast -crf <span style="color:#ae81ff">21</span> ~/mycoolvid.mkv
 </code></pre></div><p><img src="https://i.imgur.com/t6TKLqk.png" alt="Imgur"></p>
-<h2 id="backup-media-from-filesytem-to-dvd">Backup Media from Filesytem to DVD</h2>
+<p><strong>Script to bulk process</strong></p>
+<blockquote>
+<p>⚠️ this will remove the original content (copy of mkv)</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>IFS<span style="color:#f92672">=</span><span style="color:#e6db74">$&#39;\n&#39;</span>
+<span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>find . -iname <span style="color:#e6db74">&#39;*mkv&#39;</span><span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span>
+  ffmpeg -i $i -target ntsc-dvd movie.mp4
+  dvdauthor --title --video<span style="color:#f92672">=</span>ntsc -o dvd -f movie.mp4
+  dvdauthor -o dvd -T
+  mkisofs -dvd-video -o <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>i%.mkv<span style="color:#e6db74">}</span><span style="color:#e6db74">.iso&#34;</span> dvd/
+  rm -r dvd
+  rm $i
+  rm movie.mp4
+<span style="color:#66d9ef">done</span>
+</code></pre></div><h2 id="backup-media-from-filesytem-to-dvd">Backup Media from Filesytem to DVD</h2>
 <ol>
 <li>Convert file (if needed)</li>
 </ol>
