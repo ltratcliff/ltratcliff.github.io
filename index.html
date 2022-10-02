@@ -212,6 +212,31 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/aws_ecr/" class="color-inherit dim link">
+            Deploying Microservices App on AWS Elastic Container Service
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          ❤️ Huge thanks to Nick White for capturing these notes while deploying
+ VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation.
+        </div>
+          <a href="/posts/aws_ecr/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/media-backup/" class="color-inherit dim link">
             Media Backup
             </a>
@@ -258,38 +283,18 @@ nslookup ltratcliff.github.io There&rsquo;s a handful of IP addresses here, but 
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/glances_on_silverblue/" class="color-inherit dim link">
-            Glances on SilverBlue after an update
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Just updated from silverblue 34 to 35 with:
-rpm-ostree rebase fedora:fedora/35/x86_64/silverblue The update went very smooth, however there were a few minor caveats.
- My Fedora 34 toolbox was inop Had to add/update to a fedora 35 container created ansible script to make migration easier  --- - hosts: localhost become: true gather_facts: false vars_files: - software.yml tasks: - name: Install software dnf: name: &#34;{{ software }}&#34; state: latest software.yml:
-        </div>
-          <a href="/posts/glances_on_silverblue/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/glances_on_silverblue/" class="link black dim">
+              Glances on SilverBlue after an update
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/funwithhugo/" class="link black dim">

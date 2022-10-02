@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9T1HNDM5K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H9T1HNDM5K');
+</script>
+
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Deploying Microservices App on AWS Elastic Container Service | TR</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="❤️ Huge thanks to Nick White for capturing these notes while deploying
+ VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation.">
+    <meta name="generator" content="Hugo 0.91.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+
+
+
+
+    
+      
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="Deploying Microservices App on AWS Elastic Container Service" />
+<meta property="og:description" content="❤️ Huge thanks to Nick White for capturing these notes while deploying
+ VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://ltratcliff.com/posts/aws_ecr/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-05T21:05:08-04:00" />
+<meta property="article:modified_time" content="2022-04-05T21:05:08-04:00" />
+
+<meta itemprop="name" content="Deploying Microservices App on AWS Elastic Container Service">
+<meta itemprop="description" content="❤️ Huge thanks to Nick White for capturing these notes while deploying
+ VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation."><meta itemprop="datePublished" content="2022-04-05T21:05:08-04:00" />
+<meta itemprop="dateModified" content="2022-04-05T21:05:08-04:00" />
+<meta itemprop="wordCount" content="1652">
+<meta itemprop="keywords" content="AWS,ECS,ECR," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Deploying Microservices App on AWS Elastic Container Service"/>
+<meta name="twitter:description" content="❤️ Huge thanks to Nick White for capturing these notes while deploying
+ VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation."/>
+
+      
+    
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        TR
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+<a href="https://facebook.com/ltratcliff" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://twitter.com/ltratcliff" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+<a href="https://www.linkedin.com/in/ltratcliff/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/ltratcliff/" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+<a href="https://ltratcliff.com/index.xml" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" title="RSS link" rel="noopener" aria-label="RSS——Opens in a new window">
+  <svg xmlns="http://www.w3.org/2000/svg" height="32px" width="32px" viewBox="0 0 24 24">
+    <circle cx="6.18" cy="17.82" r="2.18"/>
+    <path id="scale" d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+</svg>
+
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://ltratcliff.com/posts/aws_ecr/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://ltratcliff.com/posts/aws_ecr/&amp;text=Deploying%20Microservices%20App%20on%20AWS%20Elastic%20Container%20Service" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://ltratcliff.com/posts/aws_ecr/&amp;title=Deploying%20Microservices%20App%20on%20AWS%20Elastic%20Container%20Service" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Deploying Microservices App on AWS Elastic Container Service</h1>
+      
+      <p class="tracked">
+          By <strong>
+          
+              Tom Ratcliff
+          
+          </strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-04-05T21:05:08-04:00">April 5, 2022</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><blockquote>
+<p>❤️ Huge thanks to Nick White for capturing these notes while deploying</p>
+</blockquote>
+<h2 id="vpc-setup">VPC Setup</h2>
+<h6 id="log-into-aws-then-click-the-services-tab-within-services-go-to-vpc">Log into AWS, then click the Services tab. Within Services, go to VPC:</h6>
+<p><img src="/images/aws_ecs/01_VPC/VPC_1.png" alt=""></p>
+<h6 id="then-select-create-vpc">Then select Create VPC:</h6>
+<p><img src="/images/aws_ecs/01_VPC/VPC_2.png" alt=""></p>
+<h6 id="mimic-these-settings-but-beware-of-existing-ip-conflicts-this-will-create-all-resources-required-to-get-started-public-and-private-subnets-nat-gateway-etc">Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc):</h6>
+<p><img src="/images/aws_ecs/01_VPC/VPC_3.png" alt="">
+<img src="/images/aws_ecs/01_VPC/VPC_4.png" alt=""></p>
+<h6 id="now-you-can-select-create-vpc-please-allow-5-10-minutes-for-full-creation">Now you can select Create VPC. Please allow 5-10 minutes for full creation.</h6>
+<h6 id="after-all-the-resources-have-provisioned-you-should-see-the-success-of-the-workflow">After all the resources have provisioned, you should see the success of the workflow:</h6>
+<p><img src="/images/aws_ecs/01_VPC/VPC_5.png" alt=""></p>
+<h6 id="now-we-want-to-set-up-vpc-peering-between-this-vpc-and-the-prod-vpc-from-the-vpc-service-menu-select-peering-connections-from-the-left-side-then-select-create-peering-connection-from-the-top-right-populate-this-information">Now, we want to set up VPC peering between this VPC and the PROD VPC. From the VPC Service menu, select Peering Connections from the left side. Then select Create Peering connection from the top right. Populate this information:</h6>
+<p><img src="/images/aws_ecs/01_VPC/VPC_6.PNG" alt=""></p>
+<h6 id="now-we-need-to-accept-the-connection-from-the-aws-console-it-should-be-in-the-top-right-menu-somewhere-sorry-no-screenshot--">Now, we need to accept the connection from the AWS console. It should be in the top right menu somewhere (sorry, no screenshot ☹ )</h6>
+<h6 id="navigate-to-the-route-tables-menu-from-the-vpc-service-menu-from-the-left-hand-side-we-will-be-adding-the-vpc-peering-connection-and-subnet-via-the-edit-routes-menu-on-each-of-the-route-tables">Navigate to the Route Tables menu from the VPC service menu from the left hand side. We will be adding the VPC peering connection and subnet via the Edit routes menu on EACH of the route tables:</h6>
+<p><img src="/images/aws_ecs/01_VPC/VPC_7.PNG" alt="">
+<img src="/images/aws_ecs/01_VPC/VPC_8.PNG" alt=""></p>
+<p>Congratulations, you have successfully created a VPC and it&rsquo;s various networking pieces!</p>
+<h2 id="target-group-setup">Target Group Setup</h2>
+<h6 id="from-the-services-tab-select-ec2-from-the-ec2-dashboard-under-load-balancing-select-target-groups">From the Services tab, select EC2. From the EC2 Dashboard, under Load Balancing, select Target Groups:</h6>
+<p><img src="/images/aws_ecs/02_TargetGroups/TG_1.png" alt=""></p>
+<h6 id="from-the-ec2-target-groups-submenu-select-create-target-group">From the EC2 Target Groups submenu, select Create target group:</h6>
+<p><img src="/images/aws_ecs/02_TargetGroups/TG_2.png" alt=""></p>
+<h6 id="for-this-example-we-will-be-recreating-an-ip-address-based-target-group-we-will-be-leveraging-the-port-numbers-based-on-each-of-the-microservices-these-can-be-found-in-their-own-respective-gitlab-projects-for-this-example-we-are-creating-the-dev-ecs-query-tg">For this example, we will be recreating an IP Address based Target Group. We will be leveraging the port numbers based on each of the microservices. These can be found in their own respective GitLab projects. For this example, we are creating the DEV-ecs-query TG.</h6>
+<p><img src="/images/aws_ecs/02_TargetGroups/TG_3.png" alt=""></p>
+<h6 id="the-health-checks-can-also-be-found-within-gitlab">The health checks can also be found within GitLab:</h6>
+<p><img src="/images/aws_ecs/02_TargetGroups/TG_4.png" alt=""></p>
+<h6 id="select-next-and-do-not-enter-anything-on-the-next-page-the-reason-for-this-is-because-we-currently-do-not-have-any-loadbalancers-or-containers-built-we-can-now-create-the-tg">Select next, and do not enter anything on the next page. The reason for this is because we currently do not have any loadbalancers or containers built. We can now create the TG.</h6>
+<p><img src="/images/aws_ecs/02_TargetGroups/TG_5.png" alt=""></p>
+<h6 id="you-can-repeat-this-same-process-with-a-few-changes-name-port-and-health-check-endpoint-for-the-remaining-of-the-ip-address-based-target-groups-now-we-can-provision-an-application-load-balancer-tg-enter-the-information-below-and-select-next">You can repeat this same process with a few changes (name, port, and health check endpoint) for the remaining of the IP Address-based Target Groups. Now we can provision an Application Load Balancer TG. Enter the information below, and select Next:</h6>
+<p><img src="/images/aws_ecs/02_TargetGroups/TG_6.png" alt=""></p>
+<h6 id="select-add-an-application-load-balancer-later-and-then-create-the-target-group">Select Add an Application Load Balancer later, and then Create the target group:</h6>
+<p><img src="/images/aws_ecs/02_TargetGroups/TG_7.png" alt=""></p>
+<h6 id="after-repeating-the-previous-ip-target-groups-your-list-of-tgs-should-look-something-like-this">After repeating the previous IP Target Groups, your list of TG’s should look something like this:</h6>
+<p><img src="/images/aws_ecs/02_TargetGroups/TG_8.png" alt=""></p>
+<h6 id="take-note-of-the-load-balancer-column-we-will-be-manually-adding-these-in-guide-04-alb-and-elb">Take note of the Load balancer column. We will be manually adding these in guide 04, ALB and ELB.</h6>
+<h2 id="security-group-setup">Security Group Setup</h2>
+<h6 id="after-provisioning-the-ecs-cluster-and-load-balancers-we-should-have-all-the-security-groups-we-need-we-can-now-add-all-the-rules-necessary-go-to-ec2-in-the-aws-services-tab-then-security-groups-on-the-left">After provisioning the ECS Cluster and Load Balancers, we should have all the security groups we need. We can now add all the rules necessary. Go to EC2 in the AWS Services Tab, then Security Groups on the left:</h6>
+<p><img src="/images/aws_ecs/03_SecurityGroups/SG1.png" alt=""></p>
+<h6 id="now-in-the-dev-default-security-group-we-are-going-match-the-rules-to-the-prod-default-security-group">Now, in the DEV-default security group, we are going match the rules to the PROD-default security group:</h6>
+<p><img src="/images/aws_ecs/03_SecurityGroups/SG2.png" alt=""></p>
+<h6 id="we-can-see-that-the-the-prod-default-group-has-two-rules-one-of-the-rules-points-back-to-the-prod-default-security-group-so-we-will-add-those-now-by-selecting-the-dev-default-group-then-select-edit-inbound-rules-to-reach-this-page">We can see that the the PROD-default group has two rules. One of the rules points back to the PROD-default security group, so we will add those now, by selecting the DEV-default group, then select Edit inbound rules to reach this page:</h6>
+<p><img src="/images/aws_ecs/03_SecurityGroups/SG3.png" alt=""></p>
+<h6 id="from-here-we-can-addmodify-rules-once-added-select-save-rules">From here, we can add/modify rules. Once added, select Save rules:</h6>
+<p><img src="/images/aws_ecs/03_SecurityGroups/SG4.png" alt=""></p>
+<h6 id="now-we-can-match-up-the-service-groups-to-their-respective-dev-counterparts-since-we-are-leveraging-the-prod-db-all-dev-sgs-that-require-a-db-sg-will-use-the-prod-sg-otherwise-any-rule-that-points-to-a-prod-sg-will-be-pointing-to-its-dev-counterpart-instead">Now, we can match up the service groups to their respective DEV counterparts. Since we are leveraging the prod db, all DEV SG’s that require a DB SG will use the PROD SG. Otherwise, any rule that points to a PROD SG will be pointing to it’s DEV counterpart instead.</h6>
+<p><img src="/images/aws_ecs/03_SecurityGroups/SG5.png" alt="">
+<img src="/images/aws_ecs/03_SecurityGroups/SG6.png" alt="">
+<img src="/images/aws_ecs/03_SecurityGroups/SG7.png" alt=""></p>
+<h6 id="ensure-that-the-prod-db-sg-has-all-relevant-rules-this-will-include-allowing-traffic-from-the-dev-vpc">Ensure that the PROD DB SG has all relevant rules. This will include allowing traffic from the DEV VPC.</h6>
+<p><img src="/images/aws_ecs/03_SecurityGroups/SG8.PNG" alt=""></p>
+<h2 id="application-and-network-load-balancers">Application and Network Load Balancers</h2>
+<h6 id="within-aws-select-ec2-from-the-services-tab-then-select-load-balancers-on-that-page-select-create-load-balancer">Within AWS, select EC2 from the Services tab. Then select Load Balancers. On that page, select Create Load Balancer:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB1.png" alt=""></p>
+<h6 id="choose-nlb">Choose NLB:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB2.png" alt=""></p>
+<h6 id="select-your-load-balancer-name-and-use-the-parameters-shown-use-two-public-subnets-and-create-two-listener-rules-using-the-alb-tg-we-created-earlier">Select your load balancer name, and use the parameters shown. Use two PUBLIC subnets, and create two listener rules using the ALB TG we created earlier:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB3.png" alt="">
+<img src="/images/aws_ecs/04_ALB_and_ELB/LB4.png" alt=""></p>
+<h6 id="after-selecting-create-load-balancer-you-will-be-taken-to-this-screen-please-allow-5-10-minutes-for-nlb-creation">After selecting create Load Balancer, you will be taken to this screen. Please allow 5-10 minutes for NLB creation.</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB5.png" alt=""></p>
+<h6 id="after-your-nlb-provisions-you-can-create-your-alb">After your NLB provisions, you can create your ALB:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB6.png" alt="">
+<img src="/images/aws_ecs/04_ALB_and_ELB/LB7.png" alt=""></p>
+<h6 id="create-your-internal-alb-using-private-subnets-the-listener-we-are-creating-will-be-modified-in-the-future-but-is-necessary-for-a-placeholder">Create your internal ALB using PRIVATE subnets. The listener we are creating will be modified in the future, but is necessary for a placeholder:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB8.png" alt="">
+<img src="/images/aws_ecs/04_ALB_and_ELB/LB9.png" alt=""></p>
+<h6 id="please-allow-5--10-minutes-for-the-alb-to-provision">Please allow 5 – 10 minutes for the ALB to provision.</h6>
+<h6 id="now-we-can-move-on-to-dns-within-the-services-tab-select-cloud-map-then-create-a-new-namespace">Now we can move on to DNS. Within the Services tab, select Cloud Map. Then create a new namespace:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB10.png" alt=""></p>
+<h6 id="once-your-namespace-has-provisioned-click-on-it-and-then-create-service">Once your namespace has provisioned, click on it and then Create service:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB11.png" alt="">
+<img src="/images/aws_ecs/04_ALB_and_ELB/LB12.png" alt="">
+<img src="/images/aws_ecs/04_ALB_and_ELB/LB13.png" alt=""></p>
+<h6 id="within-the-elb-add-a-listener-with-these-settings">Within the ELB, add a listener with these settings:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB14.png" alt=""></p>
+<h6 id="then-add-another-listener-to-the-alb-with-these-settings">Then add another listener to the ALB with these settings:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB15.png" alt=""></p>
+<h6 id="now-youll-have-to-reach-out-to-ccmo-clay-reiche-to-add-the-domain-name-we-want-to-dns">Now, you&rsquo;ll have to reach out to CCMO (Clay Reiche) to add the domain name we want to DNS.</h6>
+<h6 id="after-that-is-done-we-can-add-the-remaining-listeners-to-the-elb">After that is done, we can add the remaining listeners to the ELB:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB16.png" alt="">
+<img src="/images/aws_ecs/04_ALB_and_ELB/LB17.png" alt="">
+<img src="/images/aws_ecs/04_ALB_and_ELB/LB18.png" alt="">
+<img src="/images/aws_ecs/04_ALB_and_ELB/LB19.png" alt="">
+<img src="/images/aws_ecs/04_ALB_and_ELB/LB20.png" alt="">
+<img src="/images/aws_ecs/04_ALB_and_ELB/LB21.png" alt=""></p>
+<h6 id="now-from-the-load-balancer-menu-on-the-https-443-row-select-viewedit-rules">Now, from the Load Balancer menu, on the HTTPS: 443 row, select View/edit rules:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB22.png" alt=""></p>
+<h6 id="now-select-the--at-the-top-of-the-page-next-to-rules-then-add-this-rule">Now, select the + at the top of the page next to rules, then add this rule:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB23.png" alt=""></p>
+<h6 id="add-the-remaining-rules">Add the remaining rules:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB24.png" alt=""></p>
+<h6 id="after-this-we-can-finally-add-the-alb-to-the-alb-target-group-we-provisioned-earlier">After this, we can finally add the ALB to the ALB target group we provisioned earlier:</h6>
+<p><img src="/images/aws_ecs/04_ALB_and_ELB/LB25.png" alt=""></p>
+<h3 id="load-balancer-setup-complete">Load Balancer setup complete!</h3>
+<h2 id="elastic-container-registry-setup">Elastic Container Registry Setup</h2>
+<p>In the AWS Services tab, navigate to Elastic Container Registry</p>
+<p><img src="/images/aws_ecs/05_ECR/ecr1.jpg" alt=""></p>
+<p>Once here, select the &ldquo;Create Repository&rdquo; on the top right</p>
+<p><img src="/images/aws_ecs/05_ECR/ecr2.jpg" alt=""></p>
+<p>Name your repo and then select the &ldquo;Create Repository&rdquo; on the bottom right</p>
+<p><img src="/images/aws_ecs/05_ECR/ecr3.jpg" alt=""></p>
+<p>After creation, the new repo will be visible.</p>
+<ul>
+<li>Repository Name will be a link to details about the image repo</li>
+<li>The URI contains the location to push/pull from</li>
+</ul>
+<p><img src="/images/aws_ecs/05_ECR/ecr4.jpg" alt=""></p>
+<blockquote>
+<p>ℹ️ Click the repo name under the &ldquo;Repository Name&rdquo; column to add container aws_ecs to repo</p>
+</blockquote>
+<p>There will be an empty repo with no container aws_ecs listed</p>
+<p>To add aws_ecs click the &ldquo;View Push Commands&rdquo; in the top right</p>
+<p><img src="/images/aws_ecs/05_ECR/ecr5.jpg" alt=""></p>
+<p>This will show 4 steps</p>
+<p><img src="/images/aws_ecs/05_ECR/ecr6.jpg" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws ecr get-login-password --region us-gov-west-1 | docker login --username AWS --password-stdin 407355966437.dkr.ecr.us-gov-west-1.amazonaws.com
+docker build -t mytestrepo .
+docker tag mytestrepo:latest 407355966437.dkr.ecr.us-gov-west-1.amazonaws.com/mytestrepo:latest
+docker push 407355966437.dkr.ecr.us-gov-west-1.amazonaws.com/mytestrepo:latest
+</code></pre></div><p>Once pushed, you will see container aws_ecs in the repository</p>
+<p><img src="/images/aws_ecs/05_ECR/ecr7.jpg" alt=""></p>
+<h2 id="elastic-container-service-setup">Elastic Container Service Setup</h2>
+<h6 id="in-the-aws-services-tab-navigate-to-elastic-container-service-and-then-select-create-cluster">In the AWS Services tab, navigate to Elastic Container Service, and then select Create Cluster:</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS1.png" alt=""></p>
+<h6 id="select-networking-only-so-we-can-leverage-aws-fargate-serverless-nodes">Select Networking only so we can leverage AWS FarGate (serverless nodes):</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS2.png" alt="">
+<img src="/images/aws_ecs/06_ECS/ECS3.png" alt="">
+<img src="/images/aws_ecs/06_ECS/ECS4.png" alt=""></p>
+<h6 id="before-we-create-a-task-def-we-need-to-get-our-env-vars-in-place-open-s3-and-add-a-file-named-something-like-env_var_devenv-the-contents-will-look-something-like-this">Before we create a task def, we need to get our env vars in place. Open S3, and add a file named something like env_var_dev.env. The contents will look something like this:</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-.ini" data-lang=".ini"><span style="color:#a6e22e">FLASK_ENV</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker&#34;</span>
+<span style="color:#a6e22e">FLASK_APP</span><span style="color:#f92672">=</span><span style="color:#e6db74">app.py</span>
+<span style="color:#a6e22e">PYTHONDONTWRITEBYTECODE</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span>
+<span style="color:#a6e22e">ENV_DATABASE_HOST</span><span style="color:#f92672">=</span><span style="color:#e6db74">dev-1.cv34trxukfu4.us-gov-west-1.rds.amazonaws.com</span>
+<span style="color:#a6e22e">ENV_DATABASE_NAME</span><span style="color:#f92672">=</span><span style="color:#e6db74">postgres-dev</span>
+<span style="color:#a6e22e">ENV_DATABASE_USERNAME</span><span style="color:#f92672">=</span><span style="color:#e6db74">SUPERCOOLUSERNAME</span>
+<span style="color:#a6e22e">ENV_DATABASE_PASSWORD</span><span style="color:#f92672">=</span><span style="color:#e6db74">XXXXXXXXXXXXXXXXXXXX</span>
+<span style="color:#a6e22e">ENV_DATABASE_PORT</span><span style="color:#f92672">=</span><span style="color:#e6db74">5432</span>
+<span style="color:#a6e22e">ENV_SECRET_KEY</span><span style="color:#f92672">=</span><span style="color:#e6db74">XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+<span style="color:#a6e22e">ENV_REGISTRATION_TOKEN</span><span style="color:#f92672">=</span><span style="color:#e6db74">XXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+<span style="color:#a6e22e">ENV_AUTH_SERVICE_URL</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://dev-socmed-nlp.soccloudha.net</span>
+<span style="color:#a6e22e">ENV_BASE_URL</span><span style="color:#f92672">=</span><span style="color:#e6db74">https://dev-socmed-nlp.soccloudha.net</span>
+</code></pre></div><p><img src="/images/aws_ecs/06_ECS/ECS5.png" alt=""></p>
+<h6 id="now-go-back-to-ecs-in-the-aws-console-then-select-task-definitions-on-the-left-column-now-create-a-new-task-definition">Now go back to ECS in the AWS console, then Select Task Definitions on the left column. Now create a new Task Definition:</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS6.png" alt=""></p>
+<h6 id="ensure-fargate-is-selected-then-hit-next">Ensure FarGate is selected, then hit next:</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS7.png" alt=""></p>
+<h6 id="name-your-task-def-and-ensure-it-has-the-ecstaskexecutionrole-attached">Name your task def, and ensure it has the ecsTaskExecutionRole attached:</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS8.png" alt=""></p>
+<h6 id="populate-the-task-execution-iam-role-and-task-size-sections-then-select-add-container">Populate the Task execution IAM role and Task size sections, then select Add container:</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS9.png" alt=""></p>
+<h6 id="in-a-new-tab-open-ecr-then-copy-the-uri-for-the-container">In a new tab, open ECR, then copy the URI for the container:</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS10.png" alt=""></p>
+<h6 id="on-the-previous-tab-you-can-now-populate-the-image-section-as-well-as-the-rest-of-the-info-required-be-sure-to-include-the-dev-tag-and-proper-container-name">On the previous tab, you can now populate the Image section, as well as the rest of the info required. Be sure to include the dev tag, and proper container name.</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS11.png" alt="">
+<img src="/images/aws_ecs/06_ECS/ECS12.png" alt=""></p>
+<h6 id="the-rest-of-the-options-will-be-left-default-ensure-you-add-the-env_vars_devenv-file-to-environment-files-and-that-the-port-mapping-matches-what-is-in-the-load-balancer-once-youve-finished-the-first-container-it-will-appear-in-container-definitions-you-can-now-create-the-task-definition--repeat-this-process-for-all-other-containers-after-this-is-complete-we-can-now-create-the-services-from-the-task-defs-select-your-cluster-from-ecs-then-under-the-services-tab-select-create-service">The rest of the options will be left default. Ensure you add the env_vars_dev.env file to Environment Files, and that the port mapping matches what is in the load balancer Once you’ve finished the first container, it will appear in Container definitions. You can now create the task definition.  Repeat this process for all other containers. After this is complete, we can now create the services from the task defs. Select your cluster from ECS, then under the services tab, select Create service:</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS13.png" alt=""></p>
+<h6 id="create-your-service-using-the-following-options-then-select-next-step">Create your service using the following options, then select Next step:</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS14.png" alt="">
+<img src="/images/aws_ecs/06_ECS/ECS15.png" alt=""></p>
+<h6 id="select-your-vpc-and-private-subnets">Select your VPC and PRIVATE subnets:</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS16.png" alt=""></p>
+<h6 id="now-edit-the-security-group-create-a-new-security-group-and-name-it-something-like-dev-nlp-auth-we-will-modify-the-rules-later-on">Now, edit the security group. Create a new security group, and name it something like DEV-nlp-auth. We will modify the rules later on:</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS17.png" alt=""></p>
+<h6 id="under-load-balancing-select-alb-then-choose-the-loadbalancer-we-provisioned-earlier-as-well-as-the-target-group-we-made-earlier">Under Load balancing, select ALB, then choose the loadbalancer we provisioned earlier, as well as the target group we made earlier:</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS18.png" alt=""></p>
+<h6 id="the-rest-of-the-information-will-autopopulate-so-select-next-step-we-will-configure-auto-scaling-later-on-as-well-so-select-next-step-again-at-the-review-page-verify-all-of-the-information-is-correct-and-then-create-service">The rest of the information will autopopulate, so select Next step. We will configure auto scaling later on as well, so select Next step again. At the review page, verify all of the information is correct, and then Create service:</h6>
+<p><img src="/images/aws_ecs/06_ECS/ECS19.png" alt=""></p>
+<h6 id="follow-these-same-steps-for-the-rest-of-the-services-noting-the-port-service-name-private-subnets-and-target-group-sections-be-sure-to-name-the-security-group-it-creates-in-order-to-keep-things-organized">Follow these same steps for the rest of the services, noting the port, service name, private subnets, and target group sections. Be sure to name the security group it creates in order to keep things organized.</h6>
+<h2 id="aws-code-builder">AWS Code Builder</h2>
+<h1 id="create-a-code-pipeline">Create a Code Pipeline</h1>
+<blockquote>
+<p>ℹ️ Creating a pipeline ensures when a new container image is pushed to ECR a new Task (container) will be deployed</p>
+</blockquote>
+<p>In the AWS Services tab, navigate to <strong>Code Pipeline</strong></p>
+<p><img src="/images/aws_ecs/07_CodeBuilder/cb1.jpg" alt=""></p>
+<p>Once here, select the &ldquo;Create Pipeline&rdquo; on the top right</p>
+<p><img src="/images/aws_ecs/07_CodeBuilder/cb2.jpg" alt=""></p>
+<h3 id="step-1">Step 1</h3>
+<p>Name your pipeline, service, etc. Then select <strong>Next</strong></p>
+<p><img src="/images/aws_ecs/07_CodeBuilder/cb3.jpg" alt=""></p>
+<h3 id="step-2">Step 2</h3>
+<p>Select Amazon ECR and the Container Image Repo Name and tag</p>
+<p><img src="/images/aws_ecs/07_CodeBuilder/cb4.jpg" alt=""></p>
+<h3 id="step-3">Step 3</h3>
+<p>Select AWS CodeBuild then click <strong>Create Project</strong></p>
+<p><img src="/images/aws_ecs/07_CodeBuilder/cb5.jpg" alt=""></p>
+<blockquote>
+<p>ℹ️ Clicking <strong>Create Project</strong> opens a new window with a separate form</p>
+</blockquote>
+<p>Fill out form
+<img src="/images/aws_ecs/07_CodeBuilder/cb6.jpg" alt=""></p>
+<p>For BuildSpec select <strong>Insert Build Commands</strong> and then <strong>Editor</strong></p>
+<p>Copy this text to the editor</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">0.2</span>
+<span style="color:#f92672">phases</span>:
+    <span style="color:#f92672">build</span>:
+        <span style="color:#f92672">commands</span>:
+            - <span style="color:#ae81ff">ContainerName=&#34;nlp_web_app&#34;</span>
+            - <span style="color:#ae81ff">ImageURI=&#34;407355966437.dkr.ecr.us-gov-west-1.amazonaws.com/nlp_web_app:prod&#34;</span>
+            - <span style="color:#ae81ff">printf &#39;[{&#34;name&#34;:&#34;CONTAINER_NAME&#34;,&#34;imageUri&#34;:&#34;IMAGE_URI&#34;}]&#39; &gt; imagedefinitions.json</span>
+            - <span style="color:#ae81ff">sed -i -e &#34;s|CONTAINER_NAME|$ContainerName|g&#34; imagedefinitions.json</span>
+            - <span style="color:#ae81ff">sed -i -e &#34;s|IMAGE_URI|$ImageURI|g&#34; imagedefinitions.json</span>
+            - <span style="color:#ae81ff">cat imagedefinitions.json</span>
+
+<span style="color:#f92672">artifacts</span>:
+    <span style="color:#f92672">files</span>:
+        - <span style="color:#ae81ff">imagedefinitions.json</span>
+</code></pre></div><blockquote>
+<p>⚠️ The highlighted <strong>ContainerName</strong> must match the container name in the TaskDef for the service
+⚠️ The highlighted <strong>ImageURI</strong> must match the container repo and tag desired</p>
+</blockquote>
+<p><img src="/images/aws_ecs/07_CodeBuilder/cb7.jpg" alt=""></p>
+<p>Select <strong>Continue to CodePipeline</strong>
+This will close the window and prompt that a Project name was created</p>
+<p><img src="/images/aws_ecs/07_CodeBuilder/cb8.jpg" alt=""></p>
+<h3 id="step-4">Step 4</h3>
+<ul>
+<li>Deploy Provider will be <strong>Amazon ECS</strong></li>
+<li>Select ECS Cluster</li>
+<li>Select the service to update on ECR image update</li>
+<li>Select <strong>Next</strong></li>
+</ul>
+<p><img src="/images/aws_ecs/07_CodeBuilder/cb9.jpg" alt=""></p>
+<h3 id="step-5">Step 5</h3>
+<p>Review inputs and select <strong>Create Pipeline</strong></p>
+<p><img src="/images/aws_ecs/07_CodeBuilder/cb10.jpg" alt=""></p>
+<h3 id="created">Created</h3>
+<p>Once create you will see your pipeline listed</p>
+<p>Test the pipeline by pushing an updated container image to ECR</p>
+<p><img src="/images/aws_ecs/07_CodeBuilder/cb11.jpg" alt=""></p>
+<h2 id="aws-relational-databases">AWS Relational Databases</h2>
+<h6 id="from-the-services-tab-navigate-to-the-rds-section-then-select-create-database-follow-these-settings-to-create-your-production-database-this-will-serve-as-the-database-for-both-prod-and-dev">From the services tab, navigate to the RDS section, then select Create database. Follow these settings to create your production database. This will serve as the database for both PROD and DEV.</h6>
+<p><img src="aws_ecs/08_RDS/DB1.PNG" alt="">
+<img src="/images/aws_ecs/08_RDS/DB2.PNG" alt="">
+<img src="/images/aws_ecs/08_RDS/DB3.PNG" alt="">
+<img src="/images/aws_ecs/08_RDS/DB4.PNG" alt=""></p>
+<h3 id="you-can-now-select-create-database-at-the-bottom-right-corner">You can now select Create database at the bottom right corner.</h3>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/aws" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">AWS</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/ecs" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ECS</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/ecr" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ECR</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">What&#39;s in this posts</p>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#vpc-setup">VPC Setup</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#target-group-setup">Target Group Setup</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#security-group-setup">Security Group Setup</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#application-and-network-load-balancers">Application and Network Load Balancers</a>
+      <ul>
+        <li></li>
+        <li><a href="#load-balancer-setup-complete">Load Balancer setup complete!</a></li>
+      </ul>
+    </li>
+    <li><a href="#elastic-container-registry-setup">Elastic Container Registry Setup</a></li>
+    <li><a href="#elastic-container-service-setup">Elastic Container Service Setup</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#aws-code-builder">AWS Code Builder</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#step-1">Step 1</a></li>
+        <li><a href="#step-2">Step 2</a></li>
+        <li><a href="#step-3">Step 3</a></li>
+        <li><a href="#step-4">Step 4</a></li>
+        <li><a href="#step-5">Step 5</a></li>
+        <li><a href="#created">Created</a></li>
+      </ul>
+    </li>
+    <li><a href="#aws-relational-databases">AWS Relational Databases</a>
+      <ul>
+        <li></li>
+        <li><a href="#you-can-now-select-create-database-at-the-bottom-right-corner">You can now select Create database at the bottom right corner.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://ltratcliff.com/" >
+    &copy;  TR 2022 
+  </a>
+    <div>
+
+
+
+<a href="https://facebook.com/ltratcliff" target="_blank" class="link-transition facebook link dib z-999 pt3 pt0-l mr1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://twitter.com/ltratcliff" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+<a href="https://www.linkedin.com/in/ltratcliff/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/ltratcliff/" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+<a href="https://ltratcliff.com/index.xml" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" title="RSS link" rel="noopener" aria-label="RSS——Opens in a new window">
+  <svg xmlns="http://www.w3.org/2000/svg" height="32px" width="32px" viewBox="0 0 24 24">
+    <circle cx="6.18" cy="17.82" r="2.18"/>
+    <path id="scale" d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+</svg>
+
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

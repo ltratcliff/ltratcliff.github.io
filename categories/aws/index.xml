@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS on TR</title>
+    <link>http://ltratcliff.com/categories/aws/</link>
+    <description>Recent content in AWS on TR</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Apr 2022 21:05:08 -0400</lastBuildDate><atom:link href="http://ltratcliff.com/categories/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying Microservices App on AWS Elastic Container Service</title>
+      <link>http://ltratcliff.com/posts/aws_ecr/</link>
+      <pubDate>Tue, 05 Apr 2022 21:05:08 -0400</pubDate>
+      
+      <guid>http://ltratcliff.com/posts/aws_ecr/</guid>
+      <description>❤️ Huge thanks to Nick White for capturing these notes while deploying
+ VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation.</description>
+    </item>
+    
+  </channel>
+</rss>
