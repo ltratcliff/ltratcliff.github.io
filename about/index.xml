@@ -4,8 +4,9 @@
     <title>About on TR</title>
     <link>http://ltratcliff.com/about/</link>
     <description>Recent content in About on TR</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Nov 2021 12:25:00 -0500</lastBuildDate><atom:link href="http://ltratcliff.com/about/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://ltratcliff.com/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

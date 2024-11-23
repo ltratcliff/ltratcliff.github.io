@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>modules on TR</title>
+    <title>Modules on TR</title>
     <link>http://ltratcliff.com/tags/modules/</link>
-    <description>Recent content in modules on TR</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Modules on TR</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Nov 2021 15:11:42 -0400</lastBuildDate><atom:link href="http://ltratcliff.com/tags/modules/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Nov 2021 15:11:42 -0400</lastBuildDate>
+    <atom:link href="http://ltratcliff.com/tags/modules/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Offline Go Modules</title>
       <link>http://ltratcliff.com/posts/offline-go-modules/</link>
       <pubDate>Thu, 04 Nov 2021 15:11:42 -0400</pubDate>
-      
       <guid>http://ltratcliff.com/posts/offline-go-modules/</guid>
-      <description>Using go mod vendor With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  New module  create a folder on machine with internet access create a go module : go mod init offline  Download dependencies via vendor folder  create a offline_modules.go file :  touch offline_modules.go  add the dependencies you want to download (use _) :  package offline_modules import ( _ &amp;#34;github.</description>
+      <description>Using go mod vendor With an existing module copy go.mod and go.sum files from the offline PC to the internet PC New module create a folder on machine with internet access create a go module : go mod init offline Download dependencies via vendor folder create a offline_modules.go file : touch offline_modules.go add the dependencies you want to download (use _) : package offline_modules import ( _ &amp;#34;github.com/gorilla/mux&amp;#34; _ &amp;#34;github.com/sirupsen/logrus&amp;#34; ) func main() {} To download dependencies, run: go mod vendor the vendor folder should have new folders in it representing dependencies Back to offline copy go.</description>
     </item>
-    
   </channel>
 </rss>

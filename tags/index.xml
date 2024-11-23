@@ -4,161 +4,128 @@
     <title>Tags on TR</title>
     <link>http://ltratcliff.com/tags/</link>
     <description>Recent content in Tags on TR</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jun 2022 10:23:29 -0400</lastBuildDate><atom:link href="http://ltratcliff.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jun 2022 10:23:29 -0400</lastBuildDate>
+    <atom:link href="http://ltratcliff.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AKS</title>
       <link>http://ltratcliff.com/tags/aks/</link>
-      <pubDate>Sun, 26 Jun 2022 10:23:29 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/aks/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Azure</title>
       <link>http://ltratcliff.com/tags/azure/</link>
-      <pubDate>Sun, 26 Jun 2022 10:23:29 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/azure/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>AWS</title>
       <link>http://ltratcliff.com/tags/aws/</link>
-      <pubDate>Tue, 05 Apr 2022 21:05:08 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/aws/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ECR</title>
       <link>http://ltratcliff.com/tags/ecr/</link>
-      <pubDate>Tue, 05 Apr 2022 21:05:08 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/ecr/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ECS</title>
       <link>http://ltratcliff.com/tags/ecs/</link>
-      <pubDate>Tue, 05 Apr 2022 21:05:08 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/ecs/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>dvd</title>
+      <title>Dvd</title>
       <link>http://ltratcliff.com/tags/dvd/</link>
-      <pubDate>Wed, 23 Mar 2022 08:55:17 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/dvd/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ffmpeg</title>
+      <title>Ffmpeg</title>
       <link>http://ltratcliff.com/tags/ffmpeg/</link>
-      <pubDate>Wed, 23 Mar 2022 08:55:17 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/ffmpeg/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>media</title>
+      <title>Media</title>
       <link>http://ltratcliff.com/tags/media/</link>
-      <pubDate>Wed, 23 Mar 2022 08:55:17 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/media/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>github</title>
+      <title>Github</title>
       <link>http://ltratcliff.com/tags/github/</link>
-      <pubDate>Mon, 06 Dec 2021 20:48:44 -0500</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/github/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>website</title>
+      <title>Website</title>
       <link>http://ltratcliff.com/tags/website/</link>
-      <pubDate>Mon, 06 Dec 2021 20:48:44 -0500</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/website/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>glances</title>
+      <title>Glances</title>
       <link>http://ltratcliff.com/tags/glances/</link>
-      <pubDate>Thu, 11 Nov 2021 19:08:27 -0500</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/glances/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>python</title>
+      <title>Python</title>
       <link>http://ltratcliff.com/tags/python/</link>
-      <pubDate>Thu, 11 Nov 2021 19:08:27 -0500</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>silverblue</title>
+      <title>Silverblue</title>
       <link>http://ltratcliff.com/tags/silverblue/</link>
-      <pubDate>Thu, 11 Nov 2021 19:08:27 -0500</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/silverblue/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>golang</title>
+      <title>Golang</title>
       <link>http://ltratcliff.com/tags/golang/</link>
-      <pubDate>Sat, 06 Nov 2021 13:40:19 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/golang/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hugo</title>
+      <title>Hugo</title>
       <link>http://ltratcliff.com/tags/hugo/</link>
-      <pubDate>Sat, 06 Nov 2021 13:40:19 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/hugo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>modules</title>
+      <title>Modules</title>
       <link>http://ltratcliff.com/tags/modules/</link>
-      <pubDate>Thu, 04 Nov 2021 15:11:42 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/modules/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>offline</title>
+      <title>Offline</title>
       <link>http://ltratcliff.com/tags/offline/</link>
-      <pubDate>Thu, 04 Nov 2021 15:11:42 -0400</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://ltratcliff.com/tags/offline/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

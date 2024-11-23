@@ -18,10 +18,11 @@
     
     <title>Azure Application Services | TR</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Deploy An Application on Azure App Services Table of Contents  App Creation Azure Database Setup Azure Container Registry Azure App Services Creation  Create Awesome App/Model/Algo In this example we will be using a python (Flask) backend and a nodejs (VueJS) frontend.
+    <meta name="description" content="Deploy An Application on Azure App Services Table of Contents App Creation Azure Database Setup Azure Container Registry Azure App Services Creation Create Awesome App/Model/Algo In this example we will be using a python (Flask) backend and a nodejs (VueJS) frontend.
 There are two options within Azure (as we will see shortly) to deploy App services
- Source code deployment Container deployment  We will be using that latter">
-    <meta name="generator" content="Hugo 0.91.2" />
+Source code deployment Container deployment We will be using that latter
+For this example we will not be using CI/CD :sad_face: due to our new GitLab not having the external network access required to build container images and push externally.">
+    <meta name="generator" content="Hugo 0.126.2">
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -42,28 +43,41 @@ There are two options within Azure (as we will see shortly) to deploy App servic
 
     
     
-    <meta property="og:title" content="Azure Application Services" />
-<meta property="og:description" content="Deploy An Application on Azure App Services Table of Contents  App Creation Azure Database Setup Azure Container Registry Azure App Services Creation  Create Awesome App/Model/Algo In this example we will be using a python (Flask) backend and a nodejs (VueJS) frontend.
+    <meta property="og:url" content="http://ltratcliff.com/posts/az_app_svc/">
+  <meta property="og:site_name" content="TR">
+  <meta property="og:title" content="Azure Application Services">
+  <meta property="og:description" content="Deploy An Application on Azure App Services Table of Contents App Creation Azure Database Setup Azure Container Registry Azure App Services Creation Create Awesome App/Model/Algo In this example we will be using a python (Flask) backend and a nodejs (VueJS) frontend.
 There are two options within Azure (as we will see shortly) to deploy App services
- Source code deployment Container deployment  We will be using that latter" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://ltratcliff.com/posts/az_app_svc/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-06-26T10:23:29-04:00" />
-<meta property="article:modified_time" content="2022-06-26T10:23:29-04:00" />
+Source code deployment Container deployment We will be using that latter
+For this example we will not be using CI/CD :sad_face: due to our new GitLab not having the external network access required to build container images and push externally.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-06-26T10:23:29-04:00">
+    <meta property="article:modified_time" content="2022-06-26T10:23:29-04:00">
+    <meta property="article:tag" content="Azure">
+    <meta property="article:tag" content="AKS">
 
-<meta itemprop="name" content="Azure Application Services">
-<meta itemprop="description" content="Deploy An Application on Azure App Services Table of Contents  App Creation Azure Database Setup Azure Container Registry Azure App Services Creation  Create Awesome App/Model/Algo In this example we will be using a python (Flask) backend and a nodejs (VueJS) frontend.
+  <meta itemprop="name" content="Azure Application Services">
+  <meta itemprop="description" content="Deploy An Application on Azure App Services Table of Contents App Creation Azure Database Setup Azure Container Registry Azure App Services Creation Create Awesome App/Model/Algo In this example we will be using a python (Flask) backend and a nodejs (VueJS) frontend.
 There are two options within Azure (as we will see shortly) to deploy App services
- Source code deployment Container deployment  We will be using that latter"><meta itemprop="datePublished" content="2022-06-26T10:23:29-04:00" />
-<meta itemprop="dateModified" content="2022-06-26T10:23:29-04:00" />
-<meta itemprop="wordCount" content="641">
-<meta itemprop="keywords" content="Azure,AKS," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Azure Application Services"/>
-<meta name="twitter:description" content="Deploy An Application on Azure App Services Table of Contents  App Creation Azure Database Setup Azure Container Registry Azure App Services Creation  Create Awesome App/Model/Algo In this example we will be using a python (Flask) backend and a nodejs (VueJS) frontend.
+Source code deployment Container deployment We will be using that latter
+For this example we will not be using CI/CD :sad_face: due to our new GitLab not having the external network access required to build container images and push externally.">
+  <meta itemprop="datePublished" content="2022-06-26T10:23:29-04:00">
+  <meta itemprop="dateModified" content="2022-06-26T10:23:29-04:00">
+  <meta itemprop="wordCount" content="657">
+  <meta itemprop="keywords" content="Azure,AKS">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Azure Application Services">
+  <meta name="twitter:description" content="Deploy An Application on Azure App Services Table of Contents App Creation Azure Database Setup Azure Container Registry Azure App Services Creation Create Awesome App/Model/Algo In this example we will be using a python (Flask) backend and a nodejs (VueJS) frontend.
 There are two options within Azure (as we will see shortly) to deploy App services
- Source code deployment Container deployment  We will be using that latter"/>
+Source code deployment Container deployment We will be using that latter
+For this example we will not be using CI/CD :sad_face: due to our new GitLab not having the external network access required to build container images and push externally.">
 
       
+  
+
+
     
 	
   </head>
@@ -250,45 +264,44 @@ There are two options within Azure (as we will see shortly) to deploy App servic
 </ol>
 <p>We will be using that latter</p>
 <p>For this example we will not be using CI/CD :sad_face: due to our new GitLab not having the external network access
-required to build container images and push externally. Will revisit once fixed 👍</p>
+required to build container images and push externally. Will revisit once fixed :thumbs_up:</p>
 <h3 id="containerizing">Containerizing</h3>
 <p>We will not cover all things containers, but want to highlight that we will be using Environment variables for
 the configuration of our containers. ie:</p>
 <p>Example docker file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.10.7</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /usr/src/app</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> FLASK_ENV<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> FLASK_APP<span style="color:#f92672">=</span>app.py<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> PYTHONDONTWRITEBYTECODE <span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> PYTHONUNBUFFERED <span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install --upgrade pip<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> ./requirements.txt ./requirements.txt<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install --no-cache-dir -r requirements.txt<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8085</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install gunicorn<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENTRYPOINT</span> [<span style="color:#e6db74">&#34;gunicorn&#34;</span>, <span style="color:#e6db74">&#34;--bind&#34;</span>, <span style="color:#e6db74">&#34;0.0.0.0:8085&#34;</span>, <span style="color:#e6db74">&#34;app:create_app()&#34;</span>]<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>And example Environment file (.env) that will be used for local dev:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ENV_DATABASE_HOST<span style="color:#f92672">=</span>localhost
-ENV_DATABASE_NAME<span style="color:#f92672">=</span>postgres
-ENV_DATABASE_USERNAME<span style="color:#f92672">=</span>root
-ENV_DATABASE_PASSWORD<span style="color:#f92672">=</span>root
-ENV_DATABASE_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">5432</span>
-ENV_DATABASE_SCHEMA<span style="color:#f92672">=</span>analytic_platform
-</code></pre></div><p>The above values will be overwritten with production values in Azure (shown later)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> python:3.10.7</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /usr/src/app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> FLASK_ENV<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;docker&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> FLASK_APP<span style="color:#f92672">=</span>app.py<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> PYTHONDONTWRITEBYTECODE <span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> PYTHONUNBUFFERED <span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install --upgrade pip<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> ./requirements.txt ./requirements.txt<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install --no-cache-dir -r requirements.txt<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8085</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> pip install gunicorn<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENTRYPOINT</span> [<span style="color:#e6db74">&#34;gunicorn&#34;</span>, <span style="color:#e6db74">&#34;--bind&#34;</span>, <span style="color:#e6db74">&#34;0.0.0.0:8085&#34;</span>, <span style="color:#e6db74">&#34;app:create_app()&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>And example Environment file (.env) that will be used for local dev:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ENV_DATABASE_HOST<span style="color:#f92672">=</span>localhost
+</span></span><span style="display:flex;"><span>ENV_DATABASE_NAME<span style="color:#f92672">=</span>postgres
+</span></span><span style="display:flex;"><span>ENV_DATABASE_USERNAME<span style="color:#f92672">=</span>root
+</span></span><span style="display:flex;"><span>ENV_DATABASE_PASSWORD<span style="color:#f92672">=</span>root
+</span></span><span style="display:flex;"><span>ENV_DATABASE_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">5432</span>
+</span></span><span style="display:flex;"><span>ENV_DATABASE_SCHEMA<span style="color:#f92672">=</span>analytic_platform
+</span></span></code></pre></div><p>The above values will be overwritten with production values in Azure (shown later)</p>
 <p>Create the container image with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ docker build -f Dockerfile .
-</code></pre></div><p>We will re-tag and push this image later, after we set our Container Image Registry up within Azure</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ docker build -f Dockerfile .
+</span></span></code></pre></div><p>We will re-tag and push this image later, after we set our Container Image Registry up within Azure</p>
 <h2 id="azure-database-provisioning">Azure Database Provisioning</h2>
 <p>We will be using <em>Azure Database for PostgreSQL flexible servers</em></p>
 <p>In <a href="https://portal.azure.us">Azure</a> search for &ldquo;postgres&rdquo; and select the &ldquo;flexible servers&rdquo; option.</p>
@@ -312,7 +325,7 @@ the <em>Add current client IP address ( YOUR-IP-HERE )</em></p>
 <p><img src="/images/az_app_svc/db_create.png" alt="db_create"></p>
 <p>You newly provisioned db will be listed. You can click the <a href="link">name</a> for more db settings</p>
 <p><img src="/images/az_app_svc/db_listing.png" alt="db_listing"></p>
-<p>We&rsquo;re good on the DB for now 👍</p>
+<p>We&rsquo;re good on the DB for now :thumbs_up:</p>
 <h2 id="azure-container-image-registry-setup">Azure Container Image Registry setup</h2>
 <p>Search for and select <em>Container Registries</em></p>
 <p><img src="/images/az_app_svc/cr.png" alt="cr"></p>
@@ -327,16 +340,16 @@ the <em>Add current client IP address ( YOUR-IP-HERE )</em></p>
 <p><img src="/images/az_app_svc/cr_creds.png" alt="cr_creds"></p>
 <h3 id="retag-image-and-push-to-registry">Retag image and Push to Registry</h3>
 <p>Get the container image name/hash then tag with registry name</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#Get image checksum</span>
-docker images
-<span style="color:#75715e">#Tag image with new registry and version</span>
-docker tag c4895ac4b118 cdaocr.azurecr.us/data-path-discovery-web-app:1.0.0
-<span style="color:#75715e">#Log into registry with Username and Password from above step</span>
-docker login cdaocr.azurecr.us
-<span style="color:#75715e">#fill in prompts</span>
-<span style="color:#75715e">#Push image to regisry</span>
-docker push cdaocr.azurecr.us/data-path-discovery-web-app:1.0.0
-</code></pre></div><p>Check out your new image in the registry</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#Get image checksum</span>
+</span></span><span style="display:flex;"><span>docker images
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Tag image with new registry and version</span>
+</span></span><span style="display:flex;"><span>docker tag c4895ac4b118 cdaocr.azurecr.us/data-path-discovery-web-app:1.0.0
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Log into registry with Username and Password from above step</span>
+</span></span><span style="display:flex;"><span>docker login cdaocr.azurecr.us
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#fill in prompts</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Push image to regisry</span>
+</span></span><span style="display:flex;"><span>docker push cdaocr.azurecr.us/data-path-discovery-web-app:1.0.0
+</span></span></code></pre></div><p>Check out your new image in the registry</p>
 <p><img src="/images/az_app_svc/new_image_cr.png" alt="new_img"></p>
 <h2 id="azure-app-service-creation">Azure App Service Creation</h2>
 <p>It&rsquo;s Timeeeeeeeeeeeeeeee!
@@ -368,10 +381,10 @@ We&rsquo;re finally ready for the final steps for deployment.</p>
 <p><img src="/images/az_app_svc/as_config.png" alt="as_conf"></p>
 <p>Navigate to <strong><strong>Overview</strong></strong> and click on the <strong><strong>Restart</strong></strong> button for new ENVs to take effect</p>
 <blockquote>
-<p>ℹ Note the Application URL Endpoint</p>
+<p>:information: Note the Application URL Endpoint</p>
 </blockquote>
 <p><img src="/images/az_app_svc/as_final.png" alt="as_fin"></p>
-<p>That&rsquo;s it! We have successfully deployed our Application in Azure App Services 🎉</p>
+<p>That&rsquo;s it! We have successfully deployed our Application in Azure App Services &#x1f389;</p>
 <ul class="pa0">
   
    <li class="list">
@@ -384,6 +397,27 @@ We&rsquo;re finally ready for the final steps for deployment.</p>
   
 </ul>
 <div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_1LO0YJVLTk" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       
       
       </div>
@@ -420,7 +454,7 @@ We&rsquo;re finally ready for the final steps for deployment.</p>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://ltratcliff.com/" >
-    &copy;  TR 2023 
+    &copy;  TR 2024 
   </a>
     <div>
 

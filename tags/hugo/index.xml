@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hugo on TR</title>
+    <title>Hugo on TR</title>
     <link>http://ltratcliff.com/tags/hugo/</link>
-    <description>Recent content in hugo on TR</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Hugo on TR</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Nov 2021 13:40:19 -0400</lastBuildDate><atom:link href="http://ltratcliff.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Nov 2021 13:40:19 -0400</lastBuildDate>
+    <atom:link href="http://ltratcliff.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fun With Hugo</title>
       <link>http://ltratcliff.com/posts/funwithhugo/</link>
       <pubDate>Sat, 06 Nov 2021 13:40:19 -0400</pubDate>
-      
       <guid>http://ltratcliff.com/posts/funwithhugo/</guid>
-      <description>I&amp;rsquo;ve been digging the Hugo static website generator. Getting up and running quickly using github.io pages and Hugo was breeze. Here&amp;rsquo;s a few things I&amp;rsquo;ve learned over the last 2-3 days playing with Hugo
-Recommendations This youtube playlist by giraffe academy was a great start. Shout out to Mike Dane for making this content
-   Quickstart The Official docs: here help get you setup with installation, and a new project</description>
+      <description>I&amp;rsquo;ve been digging the Hugo static website generator. Getting up and running quickly using github.io pages and Hugo was breeze. Here&amp;rsquo;s a few things I&amp;rsquo;ve learned over the last 2-3 days playing with Hugo&#xA;Recommendations This youtube playlist by giraffe academy was a great start. Shout out to Mike Dane for making this content&#xA;Quickstart The Official docs: here help get you setup with installation, and a new project&#xA;namely</description>
     </item>
-    
   </channel>
 </rss>

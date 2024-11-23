@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ffmpeg on TR</title>
+    <title>Ffmpeg on TR</title>
     <link>http://ltratcliff.com/tags/ffmpeg/</link>
-    <description>Recent content in ffmpeg on TR</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Ffmpeg on TR</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Mar 2022 08:55:17 -0400</lastBuildDate><atom:link href="http://ltratcliff.com/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Mar 2022 08:55:17 -0400</lastBuildDate>
+    <atom:link href="http://ltratcliff.com/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Media Backup</title>
       <link>http://ltratcliff.com/posts/media-backup/</link>
       <pubDate>Wed, 23 Mar 2022 08:55:17 -0400</pubDate>
-      
       <guid>http://ltratcliff.com/posts/media-backup/</guid>
-      <description>Backup Media From DVD to Filesystem  Get sector size and count of the DVD  sudo isosize -x /dev/sr0 Write the contents of the DVD to an ISO  sudo dd if=/dev/sr0 of=dvd.iso bs=2048 count=2131422 status=progress Mount the ISO and inspect the contents  sudo mount -o loop dvd.iso /mnt/iso ls /mnt/iso/VIDEO_TS/ Use FFmpeg to convert VOB to preferred format   For lossless
- ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params lossless=1 ~/mycoolvid.</description>
+      <description>Backup Media From DVD to Filesystem Get sector size and count of the DVD sudo isosize -x /dev/sr0 Write the contents of the DVD to an ISO sudo dd if=/dev/sr0 of=dvd.iso bs=2048 count=2131422 status=progress Mount the ISO and inspect the contents sudo mount -o loop dvd.iso /mnt/iso ls /mnt/iso/VIDEO_TS/ Use FFmpeg to convert VOB to preferred format For lossless&#xA;ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params lossless=1 ~/mycoolvid.</description>
     </item>
-    
   </channel>
 </rss>

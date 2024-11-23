@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>silverblue on TR</title>
+    <title>Silverblue on TR</title>
     <link>http://ltratcliff.com/categories/silverblue/</link>
-    <description>Recent content in silverblue on TR</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Silverblue on TR</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Nov 2021 19:08:27 -0500</lastBuildDate><atom:link href="http://ltratcliff.com/categories/silverblue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Nov 2021 19:08:27 -0500</lastBuildDate>
+    <atom:link href="http://ltratcliff.com/categories/silverblue/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Glances on SilverBlue after an update</title>
       <link>http://ltratcliff.com/posts/glances_on_silverblue/</link>
       <pubDate>Thu, 11 Nov 2021 19:08:27 -0500</pubDate>
-      
       <guid>http://ltratcliff.com/posts/glances_on_silverblue/</guid>
-      <description>Just updated from silverblue 34 to 35 with:
-rpm-ostree rebase fedora:fedora/35/x86_64/silverblue The update went very smooth, however there were a few minor caveats.
- My Fedora 34 toolbox was inop Had to add/update to a fedora 35 container created ansible script to make migration easier  --- - hosts: localhost become: true gather_facts: false vars_files: - software.yml tasks: - name: Install software dnf: name: &amp;#34;{{ software }}&amp;#34; state: latest software.yml:</description>
+      <description>Just updated from silverblue 34 to 35 with:&#xA;rpm-ostree rebase fedora:fedora/35/x86_64/silverblue The update went very smooth, however there were a few minor caveats.&#xA;My Fedora 34 toolbox was inop Had to add/update to a fedora 35 container created ansible script to make migration easier --- - hosts: localhost become: true gather_facts: false vars_files: - software.yml tasks: - name: Install software dnf: name: &amp;#34;{{ software }}&amp;#34; state: latest software.yml:&#xA;software: - zsh - vim - tmux - golang - java-latest-openjdk - java-latest-openjdk-devel - nodejs - kubernetes-client - helm - sqlite - lsd - rsync - jq - ImageMagick Random tools no logoner worked (ie: glances).</description>
     </item>
-    
   </channel>
 </rss>

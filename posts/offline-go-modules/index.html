@@ -18,8 +18,8 @@
     
     <title>Offline Go Modules | TR</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Using go mod vendor With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  New module  create a folder on machine with internet access create a go module : go mod init offline  Download dependencies via vendor folder  create a offline_modules.go file :  touch offline_modules.go  add the dependencies you want to download (use _) :  package offline_modules import ( _ &#34;github.">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="description" content="Using go mod vendor With an existing module copy go.mod and go.sum files from the offline PC to the internet PC New module create a folder on machine with internet access create a go module : go mod init offline Download dependencies via vendor folder create a offline_modules.go file : touch offline_modules.go add the dependencies you want to download (use _) : package offline_modules import ( _ &#34;github.com/gorilla/mux&#34; _ &#34;github.com/sirupsen/logrus&#34; ) func main() {} To download dependencies, run: go mod vendor the vendor folder should have new folders in it representing dependencies Back to offline copy go.">
+    <meta name="generator" content="Hugo 0.126.2">
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
@@ -40,22 +40,33 @@
 
     
     
-    <meta property="og:title" content="Offline Go Modules" />
-<meta property="og:description" content="Using go mod vendor With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  New module  create a folder on machine with internet access create a go module : go mod init offline  Download dependencies via vendor folder  create a offline_modules.go file :  touch offline_modules.go  add the dependencies you want to download (use _) :  package offline_modules import ( _ &#34;github." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://ltratcliff.com/posts/offline-go-modules/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-11-04T15:11:42-04:00" />
-<meta property="article:modified_time" content="2021-11-04T15:11:42-04:00" />
+    <meta property="og:url" content="http://ltratcliff.com/posts/offline-go-modules/">
+  <meta property="og:site_name" content="TR">
+  <meta property="og:title" content="Offline Go Modules">
+  <meta property="og:description" content="Using go mod vendor With an existing module copy go.mod and go.sum files from the offline PC to the internet PC New module create a folder on machine with internet access create a go module : go mod init offline Download dependencies via vendor folder create a offline_modules.go file : touch offline_modules.go add the dependencies you want to download (use _) : package offline_modules import ( _ &#34;github.com/gorilla/mux&#34; _ &#34;github.com/sirupsen/logrus&#34; ) func main() {} To download dependencies, run: go mod vendor the vendor folder should have new folders in it representing dependencies Back to offline copy go.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-11-04T15:11:42-04:00">
+    <meta property="article:modified_time" content="2021-11-04T15:11:42-04:00">
+    <meta property="article:tag" content="Golang">
+    <meta property="article:tag" content="Modules">
+    <meta property="article:tag" content="Offline">
 
-<meta itemprop="name" content="Offline Go Modules">
-<meta itemprop="description" content="Using go mod vendor With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  New module  create a folder on machine with internet access create a go module : go mod init offline  Download dependencies via vendor folder  create a offline_modules.go file :  touch offline_modules.go  add the dependencies you want to download (use _) :  package offline_modules import ( _ &#34;github."><meta itemprop="datePublished" content="2021-11-04T15:11:42-04:00" />
-<meta itemprop="dateModified" content="2021-11-04T15:11:42-04:00" />
-<meta itemprop="wordCount" content="117">
-<meta itemprop="keywords" content="golang,modules,offline," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Offline Go Modules"/>
-<meta name="twitter:description" content="Using go mod vendor With an existing module  copy go.mod and go.sum files from the offline PC to the internet PC  New module  create a folder on machine with internet access create a go module : go mod init offline  Download dependencies via vendor folder  create a offline_modules.go file :  touch offline_modules.go  add the dependencies you want to download (use _) :  package offline_modules import ( _ &#34;github."/>
+  <meta itemprop="name" content="Offline Go Modules">
+  <meta itemprop="description" content="Using go mod vendor With an existing module copy go.mod and go.sum files from the offline PC to the internet PC New module create a folder on machine with internet access create a go module : go mod init offline Download dependencies via vendor folder create a offline_modules.go file : touch offline_modules.go add the dependencies you want to download (use _) : package offline_modules import ( _ &#34;github.com/gorilla/mux&#34; _ &#34;github.com/sirupsen/logrus&#34; ) func main() {} To download dependencies, run: go mod vendor the vendor folder should have new folders in it representing dependencies Back to offline copy go.">
+  <meta itemprop="datePublished" content="2021-11-04T15:11:42-04:00">
+  <meta itemprop="dateModified" content="2021-11-04T15:11:42-04:00">
+  <meta itemprop="wordCount" content="117">
+  <meta itemprop="keywords" content="Golang,Modules,Offline">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Offline Go Modules">
+  <meta name="twitter:description" content="Using go mod vendor With an existing module copy go.mod and go.sum files from the offline PC to the internet PC New module create a folder on machine with internet access create a go module : go mod init offline Download dependencies via vendor folder create a offline_modules.go file : touch offline_modules.go add the dependencies you want to download (use _) : package offline_modules import ( _ &#34;github.com/gorilla/mux&#34; _ &#34;github.com/sirupsen/logrus&#34; ) func main() {} To download dependencies, run: go mod vendor the vendor folder should have new folders in it representing dependencies Back to offline copy go.">
 
       
+  
+
+
     
 	
   </head>
@@ -239,23 +250,23 @@
 <ul>
 <li>create a <code>offline_modules.go</code> file :</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">touch offline_modules.go
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch offline_modules.go
+</span></span></code></pre></div><ul>
 <li>add the dependencies you want to download (use <code>_</code>) :</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">offline_modules</span>
-
-<span style="color:#f92672">import</span> (
-	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;github.com/gorilla/mux&#34;</span>
-	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;github.com/sirupsen/logrus&#34;</span>
-)
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {}
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">offline_modules</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;github.com/gorilla/mux&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;github.com/sirupsen/logrus&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {}
+</span></span></code></pre></div><ul>
 <li>To download dependencies, run:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go mod vendor
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go mod vendor
+</span></span></code></pre></div><ul>
 <li>the vendor folder should have new folders in it representing dependencies</li>
 </ul>
 <h3 id="back-to-offline">Back to offline</h3>
@@ -263,8 +274,8 @@
 <li>copy <code>go.mod</code>, <code>go.sum</code> and <code>vendor</code> directory to offline machine</li>
 <li>run your go commands with the flag <code>-mod=vendor</code> like:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">run</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">mod</span>=<span style="color:#a6e22e">vendor</span> <span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>
-</code></pre></div><ul class="pa0">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">run</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">mod</span>=<span style="color:#a6e22e">vendor</span> <span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list">
      <a href="/tags/golang" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">golang</a>
@@ -280,6 +291,27 @@
   
 </ul>
 <div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_1LO0YJVLTk" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       
       
       </div>
@@ -312,7 +344,7 @@
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://ltratcliff.com/" >
-    &copy;  TR 2023 
+    &copy;  TR 2024 
   </a>
     <div>
 
