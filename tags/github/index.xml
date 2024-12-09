@@ -13,7 +13,7 @@
       <link>http://ltratcliff.com/posts/github-io/</link>
       <pubDate>Mon, 06 Dec 2021 20:48:44 -0500</pubDate>
       <guid>http://ltratcliff.com/posts/github-io/</guid>
-      <description>Github.io Sign up and create a github.io repo/page here: github.io&#xA;Custom Domain Purchase a custom domain. I chose google domains Google Domains&#xA;Once purchased we need to setup DNS&#xA;Google Domains DNS We need to create an A record to point our new domain to the github.io IPs&#xA;To get the github.io IPs we can use nslookup&#xA;nslookup ltratcliff.github.io There&amp;rsquo;s a handful of IP addresses here, but we are not concerned with the IPV6 ones (2606:50c0:etc.</description>
+      <description>Host your site for free using github pages</description>
     </item>
   </channel>
 </rss>

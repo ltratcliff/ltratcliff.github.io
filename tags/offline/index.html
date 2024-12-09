@@ -19,14 +19,14 @@
     <title>TR</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Blog on Software and Hardware Experiences.">
-    <meta name="generator" content="Hugo 0.126.2">
+    <meta name="generator" content="Hugo 0.139.3">
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.fd3a3b2bfecb884befd67127f1ea8e8a3df37fad1bcbf82a4794e0f69a00d42f.css" >
 
 
 
@@ -54,15 +54,13 @@
 
   <meta itemprop="name" content="Offline">
   <meta itemprop="description" content="Blog on Software and Hardware Experiences.">
+  <meta itemprop="datePublished" content="2021-11-04T15:11:42-04:00">
   <meta itemprop="dateModified" content="2021-11-04T15:11:42-04:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Offline">
   <meta name="twitter:description" content="Blog on Software and Hardware Experiences.">
 
       
-  
-
-
     
 	
   </head>
@@ -202,7 +200,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Using go mod vendor With an existing module copy go.mod and go.sum files from the offline PC to the internet PC New module create a folder on machine with internet access create a go module : go mod init offline Download dependencies via vendor folder create a offline_modules.go file : touch offline_modules.go add the dependencies you want to download (use _) : package offline_modules import ( _ &#34;github.com/gorilla/mux&#34; _ &#34;github.com/sirupsen/logrus&#34; ) func main() {} To download dependencies, run: go mod vendor the vendor folder should have new folders in it representing dependencies Back to offline copy go.
+      Work in airgapped enviroments with Golang
     </div>
   </div>
 </div>

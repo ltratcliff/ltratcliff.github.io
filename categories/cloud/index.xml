@@ -13,7 +13,7 @@
       <link>http://ltratcliff.com/posts/az_app_svc/</link>
       <pubDate>Sun, 26 Jun 2022 10:23:29 -0400</pubDate>
       <guid>http://ltratcliff.com/posts/az_app_svc/</guid>
-      <description>Deploy An Application on Azure App Services Table of Contents App Creation Azure Database Setup Azure Container Registry Azure App Services Creation Create Awesome App/Model/Algo In this example we will be using a python (Flask) backend and a nodejs (VueJS) frontend.&#xA;There are two options within Azure (as we will see shortly) to deploy App services&#xA;Source code deployment Container deployment We will be using that latter&#xA;For this example we will not be using CI/CD :sad_face: due to our new GitLab not having the external network access required to build container images and push externally.</description>
+      <description>Use Azure to host your containers</description>
     </item>
   </channel>
 </rss>

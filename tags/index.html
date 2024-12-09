@@ -19,14 +19,14 @@
     <title>TR</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Blog on Software and Hardware Experiences.">
-    <meta name="generator" content="Hugo 0.126.2">
+    <meta name="generator" content="Hugo 0.139.3">
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.fd3a3b2bfecb884befd67127f1ea8e8a3df37fad1bcbf82a4794e0f69a00d42f.css" >
 
 
 
@@ -54,15 +54,13 @@
 
   <meta itemprop="name" content="Tags">
   <meta itemprop="description" content="Blog on Software and Hardware Experiences.">
+  <meta itemprop="datePublished" content="2022-06-26T10:23:29-04:00">
   <meta itemprop="dateModified" content="2022-06-26T10:23:29-04:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Tags">
   <meta name="twitter:description" content="Blog on Software and Hardware Experiences.">
 
       
-  
-
-
     
 	
   </head>
@@ -208,10 +206,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Deploy An Application on Azure App Services Table of Contents App Creation Azure Database Setup Azure Container Registry Azure App Services Creation Create Awesome App/Model/Algo In this example we will be using a python (Flask) backend and a nodejs (VueJS) frontend.
-There are two options within Azure (as we will see shortly) to deploy App services
-Source code deployment Container deployment We will be using that latter
-For this example we will not be using CI/CD :sad_face: due to our new GitLab not having the external network access required to build container images and push externally.
+      Use Azure to host your containers
     </div>
   </div>
 </div>
@@ -233,8 +228,7 @@ For this example we will not be using CI/CD :sad_face: due to our new GitLab not
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &#x2764;&#xfe0f; Huge thanks to Nick White for capturing these notes while deploying
-VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation. After all the resources have provisioned, you should see the success of the workflow: Now, we want to set up VPC peering between this VPC and the PROD VPC.
+      How to leverage AWS ECS for hosting containerized apps
     </div>
   </div>
 </div>
@@ -256,10 +250,7 @@ VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC:
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Deploy An Application on Azure App Services Table of Contents App Creation Azure Database Setup Azure Container Registry Azure App Services Creation Create Awesome App/Model/Algo In this example we will be using a python (Flask) backend and a nodejs (VueJS) frontend.
-There are two options within Azure (as we will see shortly) to deploy App services
-Source code deployment Container deployment We will be using that latter
-For this example we will not be using CI/CD :sad_face: due to our new GitLab not having the external network access required to build container images and push externally.
+      Use Azure to host your containers
     </div>
   </div>
 </div>
@@ -281,8 +272,7 @@ For this example we will not be using CI/CD :sad_face: due to our new GitLab not
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Backup Media From DVD to Filesystem Get sector size and count of the DVD sudo isosize -x /dev/sr0 Write the contents of the DVD to an ISO sudo dd if=/dev/sr0 of=dvd.iso bs=2048 count=2131422 status=progress Mount the ISO and inspect the contents sudo mount -o loop dvd.iso /mnt/iso ls /mnt/iso/VIDEO_TS/ Use FFmpeg to convert VOB to preferred format For lossless
-ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params lossless=1 ~/mycoolvid.
+      Store and copy your DVDs for archival
     </div>
   </div>
 </div>
@@ -304,8 +294,7 @@ ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params los
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &#x2764;&#xfe0f; Huge thanks to Nick White for capturing these notes while deploying
-VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation. After all the resources have provisioned, you should see the success of the workflow: Now, we want to set up VPC peering between this VPC and the PROD VPC.
+      How to leverage AWS ECS for hosting containerized apps
     </div>
   </div>
 </div>
@@ -327,8 +316,7 @@ VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC:
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      &#x2764;&#xfe0f; Huge thanks to Nick White for capturing these notes while deploying
-VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation. After all the resources have provisioned, you should see the success of the workflow: Now, we want to set up VPC peering between this VPC and the PROD VPC.
+      How to leverage AWS ECS for hosting containerized apps
     </div>
   </div>
 </div>
@@ -350,8 +338,7 @@ VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC:
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Backup Media From DVD to Filesystem Get sector size and count of the DVD sudo isosize -x /dev/sr0 Write the contents of the DVD to an ISO sudo dd if=/dev/sr0 of=dvd.iso bs=2048 count=2131422 status=progress Mount the ISO and inspect the contents sudo mount -o loop dvd.iso /mnt/iso ls /mnt/iso/VIDEO_TS/ Use FFmpeg to convert VOB to preferred format For lossless
-ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params lossless=1 ~/mycoolvid.
+      Store and copy your DVDs for archival
     </div>
   </div>
 </div>
@@ -373,12 +360,7 @@ ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params los
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Github.io Sign up and create a github.io repo/page here: github.io
-Custom Domain Purchase a custom domain. I chose google domains Google Domains
-Once purchased we need to setup DNS
-Google Domains DNS We need to create an A record to point our new domain to the github.io IPs
-To get the github.io IPs we can use nslookup
-nslookup ltratcliff.github.io There&rsquo;s a handful of IP addresses here, but we are not concerned with the IPV6 ones (2606:50c0:etc.
+      Host your site for free using github pages
     </div>
   </div>
 </div>
@@ -400,10 +382,7 @@ nslookup ltratcliff.github.io There&rsquo;s a handful of IP addresses here, but 
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Just updated from silverblue 34 to 35 with:
-rpm-ostree rebase fedora:fedora/35/x86_64/silverblue The update went very smooth, however there were a few minor caveats.
-My Fedora 34 toolbox was inop Had to add/update to a fedora 35 container created ansible script to make migration easier --- - hosts: localhost become: true gather_facts: false vars_files: - software.yml tasks: - name: Install software dnf: name: &#34;{{ software }}&#34; state: latest software.yml:
-software: - zsh - vim - tmux - golang - java-latest-openjdk - java-latest-openjdk-devel - nodejs - kubernetes-client - helm - sqlite - lsd - rsync - jq - ImageMagick Random tools no logoner worked (ie: glances).
+      Work around immutable OSes
     </div>
   </div>
 </div>
@@ -425,10 +404,7 @@ software: - zsh - vim - tmux - golang - java-latest-openjdk - java-latest-openjd
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I&rsquo;ve been digging the Hugo static website generator. Getting up and running quickly using github.io pages and Hugo was breeze. Here&rsquo;s a few things I&rsquo;ve learned over the last 2-3 days playing with Hugo
-Recommendations This youtube playlist by giraffe academy was a great start. Shout out to Mike Dane for making this content
-Quickstart The Official docs: here help get you setup with installation, and a new project
-namely
+      Getting started with Hugo
     </div>
   </div>
 </div>
@@ -443,7 +419,7 @@ namely
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Using go mod vendor With an existing module copy go.mod and go.sum files from the offline PC to the internet PC New module create a folder on machine with internet access create a go module : go mod init offline Download dependencies via vendor folder create a offline_modules.go file : touch offline_modules.go add the dependencies you want to download (use _) : package offline_modules import ( _ &#34;github.com/gorilla/mux&#34; _ &#34;github.com/sirupsen/logrus&#34; ) func main() {} To download dependencies, run: go mod vendor the vendor folder should have new folders in it representing dependencies Back to offline copy go.
+      Work in airgapped enviroments with Golang
     </div>
   </div>
 </div>
@@ -465,10 +441,7 @@ namely
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      I&rsquo;ve been digging the Hugo static website generator. Getting up and running quickly using github.io pages and Hugo was breeze. Here&rsquo;s a few things I&rsquo;ve learned over the last 2-3 days playing with Hugo
-Recommendations This youtube playlist by giraffe academy was a great start. Shout out to Mike Dane for making this content
-Quickstart The Official docs: here help get you setup with installation, and a new project
-namely
+      Getting started with Hugo
     </div>
   </div>
 </div>
@@ -490,8 +463,7 @@ namely
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Backup Media From DVD to Filesystem Get sector size and count of the DVD sudo isosize -x /dev/sr0 Write the contents of the DVD to an ISO sudo dd if=/dev/sr0 of=dvd.iso bs=2048 count=2131422 status=progress Mount the ISO and inspect the contents sudo mount -o loop dvd.iso /mnt/iso ls /mnt/iso/VIDEO_TS/ Use FFmpeg to convert VOB to preferred format For lossless
-ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params lossless=1 ~/mycoolvid.
+      Store and copy your DVDs for archival
     </div>
   </div>
 </div>
@@ -513,7 +485,7 @@ ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params los
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Using go mod vendor With an existing module copy go.mod and go.sum files from the offline PC to the internet PC New module create a folder on machine with internet access create a go module : go mod init offline Download dependencies via vendor folder create a offline_modules.go file : touch offline_modules.go add the dependencies you want to download (use _) : package offline_modules import ( _ &#34;github.com/gorilla/mux&#34; _ &#34;github.com/sirupsen/logrus&#34; ) func main() {} To download dependencies, run: go mod vendor the vendor folder should have new folders in it representing dependencies Back to offline copy go.
+      Work in airgapped enviroments with Golang
     </div>
   </div>
 </div>
@@ -535,7 +507,7 @@ ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params los
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Using go mod vendor With an existing module copy go.mod and go.sum files from the offline PC to the internet PC New module create a folder on machine with internet access create a go module : go mod init offline Download dependencies via vendor folder create a offline_modules.go file : touch offline_modules.go add the dependencies you want to download (use _) : package offline_modules import ( _ &#34;github.com/gorilla/mux&#34; _ &#34;github.com/sirupsen/logrus&#34; ) func main() {} To download dependencies, run: go mod vendor the vendor folder should have new folders in it representing dependencies Back to offline copy go.
+      Work in airgapped enviroments with Golang
     </div>
   </div>
 </div>
@@ -557,10 +529,7 @@ ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params los
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Just updated from silverblue 34 to 35 with:
-rpm-ostree rebase fedora:fedora/35/x86_64/silverblue The update went very smooth, however there were a few minor caveats.
-My Fedora 34 toolbox was inop Had to add/update to a fedora 35 container created ansible script to make migration easier --- - hosts: localhost become: true gather_facts: false vars_files: - software.yml tasks: - name: Install software dnf: name: &#34;{{ software }}&#34; state: latest software.yml:
-software: - zsh - vim - tmux - golang - java-latest-openjdk - java-latest-openjdk-devel - nodejs - kubernetes-client - helm - sqlite - lsd - rsync - jq - ImageMagick Random tools no logoner worked (ie: glances).
+      Work around immutable OSes
     </div>
   </div>
 </div>
@@ -582,10 +551,7 @@ software: - zsh - vim - tmux - golang - java-latest-openjdk - java-latest-openjd
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Just updated from silverblue 34 to 35 with:
-rpm-ostree rebase fedora:fedora/35/x86_64/silverblue The update went very smooth, however there were a few minor caveats.
-My Fedora 34 toolbox was inop Had to add/update to a fedora 35 container created ansible script to make migration easier --- - hosts: localhost become: true gather_facts: false vars_files: - software.yml tasks: - name: Install software dnf: name: &#34;{{ software }}&#34; state: latest software.yml:
-software: - zsh - vim - tmux - golang - java-latest-openjdk - java-latest-openjdk-devel - nodejs - kubernetes-client - helm - sqlite - lsd - rsync - jq - ImageMagick Random tools no logoner worked (ie: glances).
+      Work around immutable OSes
     </div>
   </div>
 </div>
@@ -607,12 +573,7 @@ software: - zsh - vim - tmux - golang - java-latest-openjdk - java-latest-openjd
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Github.io Sign up and create a github.io repo/page here: github.io
-Custom Domain Purchase a custom domain. I chose google domains Google Domains
-Once purchased we need to setup DNS
-Google Domains DNS We need to create an A record to point our new domain to the github.io IPs
-To get the github.io IPs we can use nslookup
-nslookup ltratcliff.github.io There&rsquo;s a handful of IP addresses here, but we are not concerned with the IPV6 ones (2606:50c0:etc.
+      Host your site for free using github pages
     </div>
   </div>
 </div>

@@ -19,14 +19,14 @@
     <title>TR</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Blog on Software and Hardware Experiences.">
-    <meta name="generator" content="Hugo 0.126.2">
+    <meta name="generator" content="Hugo 0.139.3">
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.fd3a3b2bfecb884befd67127f1ea8e8a3df37fad1bcbf82a4794e0f69a00d42f.css" >
 
 
 
@@ -54,15 +54,13 @@
 
   <meta itemprop="name" content="Python">
   <meta itemprop="description" content="Blog on Software and Hardware Experiences.">
+  <meta itemprop="datePublished" content="2021-11-11T19:08:27-05:00">
   <meta itemprop="dateModified" content="2021-11-11T19:08:27-05:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Python">
   <meta name="twitter:description" content="Blog on Software and Hardware Experiences.">
 
       
-  
-
-
     
 	
   </head>
@@ -202,10 +200,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Just updated from silverblue 34 to 35 with:
-rpm-ostree rebase fedora:fedora/35/x86_64/silverblue The update went very smooth, however there were a few minor caveats.
-My Fedora 34 toolbox was inop Had to add/update to a fedora 35 container created ansible script to make migration easier --- - hosts: localhost become: true gather_facts: false vars_files: - software.yml tasks: - name: Install software dnf: name: &#34;{{ software }}&#34; state: latest software.yml:
-software: - zsh - vim - tmux - golang - java-latest-openjdk - java-latest-openjdk-devel - nodejs - kubernetes-client - helm - sqlite - lsd - rsync - jq - ImageMagick Random tools no logoner worked (ie: glances).
+      Work around immutable OSes
     </div>
   </div>
 </div>

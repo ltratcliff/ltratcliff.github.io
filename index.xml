@@ -13,56 +13,56 @@
       <link>http://ltratcliff.com/posts/az_app_svc/</link>
       <pubDate>Sun, 26 Jun 2022 10:23:29 -0400</pubDate>
       <guid>http://ltratcliff.com/posts/az_app_svc/</guid>
-      <description>Deploy An Application on Azure App Services Table of Contents App Creation Azure Database Setup Azure Container Registry Azure App Services Creation Create Awesome App/Model/Algo In this example we will be using a python (Flask) backend and a nodejs (VueJS) frontend.&#xA;There are two options within Azure (as we will see shortly) to deploy App services&#xA;Source code deployment Container deployment We will be using that latter&#xA;For this example we will not be using CI/CD :sad_face: due to our new GitLab not having the external network access required to build container images and push externally.</description>
+      <description>Use Azure to host your containers</description>
     </item>
     <item>
       <title>Deploying Microservices App on AWS Elastic Container Service</title>
       <link>http://ltratcliff.com/posts/aws_ecr/</link>
       <pubDate>Tue, 05 Apr 2022 21:05:08 -0400</pubDate>
       <guid>http://ltratcliff.com/posts/aws_ecr/</guid>
-      <description>&amp;#x2764;&amp;#xfe0f; Huge thanks to Nick White for capturing these notes while deploying&#xA;VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation. After all the resources have provisioned, you should see the success of the workflow: Now, we want to set up VPC peering between this VPC and the PROD VPC.</description>
+      <description>How to leverage AWS ECS for hosting containerized apps</description>
     </item>
     <item>
       <title>Media Backup</title>
       <link>http://ltratcliff.com/posts/media-backup/</link>
       <pubDate>Wed, 23 Mar 2022 08:55:17 -0400</pubDate>
       <guid>http://ltratcliff.com/posts/media-backup/</guid>
-      <description>Backup Media From DVD to Filesystem Get sector size and count of the DVD sudo isosize -x /dev/sr0 Write the contents of the DVD to an ISO sudo dd if=/dev/sr0 of=dvd.iso bs=2048 count=2131422 status=progress Mount the ISO and inspect the contents sudo mount -o loop dvd.iso /mnt/iso ls /mnt/iso/VIDEO_TS/ Use FFmpeg to convert VOB to preferred format For lossless&#xA;ffmpeg -i VTS_01_1.VOB -c:a copy -c:v libx265 -preset ultrafast -x265-params lossless=1 ~/mycoolvid.</description>
+      <description>Store and copy your DVDs for archival</description>
     </item>
     <item>
       <title>Free Web Hosting with GitHub Pages</title>
       <link>http://ltratcliff.com/posts/github-io/</link>
       <pubDate>Mon, 06 Dec 2021 20:48:44 -0500</pubDate>
       <guid>http://ltratcliff.com/posts/github-io/</guid>
-      <description>Github.io Sign up and create a github.io repo/page here: github.io&#xA;Custom Domain Purchase a custom domain. I chose google domains Google Domains&#xA;Once purchased we need to setup DNS&#xA;Google Domains DNS We need to create an A record to point our new domain to the github.io IPs&#xA;To get the github.io IPs we can use nslookup&#xA;nslookup ltratcliff.github.io There&amp;rsquo;s a handful of IP addresses here, but we are not concerned with the IPV6 ones (2606:50c0:etc.</description>
+      <description>Host your site for free using github pages</description>
     </item>
     <item>
       <title>Glances on SilverBlue after an update</title>
       <link>http://ltratcliff.com/posts/glances_on_silverblue/</link>
       <pubDate>Thu, 11 Nov 2021 19:08:27 -0500</pubDate>
       <guid>http://ltratcliff.com/posts/glances_on_silverblue/</guid>
-      <description>Just updated from silverblue 34 to 35 with:&#xA;rpm-ostree rebase fedora:fedora/35/x86_64/silverblue The update went very smooth, however there were a few minor caveats.&#xA;My Fedora 34 toolbox was inop Had to add/update to a fedora 35 container created ansible script to make migration easier --- - hosts: localhost become: true gather_facts: false vars_files: - software.yml tasks: - name: Install software dnf: name: &amp;#34;{{ software }}&amp;#34; state: latest software.yml:&#xA;software: - zsh - vim - tmux - golang - java-latest-openjdk - java-latest-openjdk-devel - nodejs - kubernetes-client - helm - sqlite - lsd - rsync - jq - ImageMagick Random tools no logoner worked (ie: glances).</description>
+      <description>Work around immutable OSes</description>
     </item>
     <item>
       <title>Fun With Hugo</title>
       <link>http://ltratcliff.com/posts/funwithhugo/</link>
       <pubDate>Sat, 06 Nov 2021 13:40:19 -0400</pubDate>
       <guid>http://ltratcliff.com/posts/funwithhugo/</guid>
-      <description>I&amp;rsquo;ve been digging the Hugo static website generator. Getting up and running quickly using github.io pages and Hugo was breeze. Here&amp;rsquo;s a few things I&amp;rsquo;ve learned over the last 2-3 days playing with Hugo&#xA;Recommendations This youtube playlist by giraffe academy was a great start. Shout out to Mike Dane for making this content&#xA;Quickstart The Official docs: here help get you setup with installation, and a new project&#xA;namely</description>
+      <description>Getting started with Hugo</description>
     </item>
     <item>
       <title>Offline Go Modules</title>
       <link>http://ltratcliff.com/posts/offline-go-modules/</link>
       <pubDate>Thu, 04 Nov 2021 15:11:42 -0400</pubDate>
       <guid>http://ltratcliff.com/posts/offline-go-modules/</guid>
-      <description>Using go mod vendor With an existing module copy go.mod and go.sum files from the offline PC to the internet PC New module create a folder on machine with internet access create a go module : go mod init offline Download dependencies via vendor folder create a offline_modules.go file : touch offline_modules.go add the dependencies you want to download (use _) : package offline_modules import ( _ &amp;#34;github.com/gorilla/mux&amp;#34; _ &amp;#34;github.com/sirupsen/logrus&amp;#34; ) func main() {} To download dependencies, run: go mod vendor the vendor folder should have new folders in it representing dependencies Back to offline copy go.</description>
+      <description>Work in airgapped enviroments with Golang</description>
     </item>
     <item>
       <title>First Post</title>
       <link>http://ltratcliff.com/posts/first-post/</link>
       <pubDate>Thu, 04 Nov 2021 14:45:52 -0400</pubDate>
       <guid>http://ltratcliff.com/posts/first-post/</guid>
-      <description>About me Born in Miami Florida and raised in Fort Lauderdale. After High-School I went to FSU to study computer science.&#xA;After four years of study I left FSU and joined the Marines. In the Marines I worked on electronic equiptment for a SIGINT Battalion.&#xA;After the Marines I became a defense contractor and started working as Systems Administrator for an AirForce GEOINT squadron in the AF-DCGS. I did this for 10 years where I worked with some of the smartest people in my career.</description>
+      <description>&lt;h1 id=&#34;about-me&#34;&gt;About me&lt;/h1&gt;&#xA;&lt;p&gt;Born in Miami Florida and raised in Fort Lauderdale. After High-School I went to FSU to study computer science.&lt;/p&gt;&#xA;&lt;p&gt;After four years of study I left FSU and joined the Marines. In the Marines I worked on electronic equiptment for a SIGINT Battalion.&lt;/p&gt;&#xA;&lt;p&gt;After the Marines I became a defense contractor and started working as Systems Administrator for an AirForce GEOINT squadron in the AF-DCGS.&#xA;I did this for 10 years where I worked with some of the smartest people in my career. We got to travel the world with this job,&#xA;and I am forever thankful for that experience&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

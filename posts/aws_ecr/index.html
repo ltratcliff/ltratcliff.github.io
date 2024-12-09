@@ -18,16 +18,15 @@
     
     <title>Deploying Microservices App on AWS Elastic Container Service | TR</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="&#x2764;&#xfe0f; Huge thanks to Nick White for capturing these notes while deploying
-VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation. After all the resources have provisioned, you should see the success of the workflow: Now, we want to set up VPC peering between this VPC and the PROD VPC.">
-    <meta name="generator" content="Hugo 0.126.2">
+    <meta name="description" content="How to leverage AWS ECS for hosting containerized apps">
+    <meta name="generator" content="Hugo 0.139.3">
     
     
       <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.abe0b1c07d5e33565b0f9b998a7b1b5228b709f36af363e2766bc8035f2237b7.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.fd3a3b2bfecb884befd67127f1ea8e8a3df37fad1bcbf82a4794e0f69a00d42f.css" >
 
 
 
@@ -44,8 +43,7 @@ VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC:
     <meta property="og:url" content="http://ltratcliff.com/posts/aws_ecr/">
   <meta property="og:site_name" content="TR">
   <meta property="og:title" content="Deploying Microservices App on AWS Elastic Container Service">
-  <meta property="og:description" content="❤️ Huge thanks to Nick White for capturing these notes while deploying
-VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation. After all the resources have provisioned, you should see the success of the workflow: Now, we want to set up VPC peering between this VPC and the PROD VPC.">
+  <meta property="og:description" content="How to leverage AWS ECS for hosting containerized apps">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -56,21 +54,16 @@ VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC:
     <meta property="article:tag" content="ECR">
 
   <meta itemprop="name" content="Deploying Microservices App on AWS Elastic Container Service">
-  <meta itemprop="description" content="❤️ Huge thanks to Nick White for capturing these notes while deploying
-VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation. After all the resources have provisioned, you should see the success of the workflow: Now, we want to set up VPC peering between this VPC and the PROD VPC.">
+  <meta itemprop="description" content="How to leverage AWS ECS for hosting containerized apps">
   <meta itemprop="datePublished" content="2022-04-05T21:05:08-04:00">
   <meta itemprop="dateModified" content="2022-04-05T21:05:08-04:00">
   <meta itemprop="wordCount" content="1652">
   <meta itemprop="keywords" content="AWS,ECS,ECR">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Deploying Microservices App on AWS Elastic Container Service">
-  <meta name="twitter:description" content="❤️ Huge thanks to Nick White for capturing these notes while deploying
-VPC Setup Log into AWS, then click the Services tab. Within Services, go to VPC: Then select Create VPC: Mimic these settings, but beware of existing IP conflicts. This will create all resources required to get started (public and private subnets, NAT gateway, etc): Now you can select Create VPC. Please allow 5-10 minutes for full creation. After all the resources have provisioned, you should see the success of the workflow: Now, we want to set up VPC peering between this VPC and the PROD VPC.">
+  <meta name="twitter:description" content="How to leverage AWS ECS for hosting containerized apps">
 
       
-  
-
-
     
 	
   </head>
