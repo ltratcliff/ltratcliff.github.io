@@ -6,8 +6,15 @@
     <description>Recent content in Posts on TR</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jun 2022 10:23:29 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 07 Dec 2024 13:29:00 -0400</lastBuildDate>
     <atom:link href="http://ltratcliff.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Host a Local Container Externally</title>
+      <link>http://ltratcliff.com/posts/host_local_container/</link>
+      <pubDate>Sat, 07 Dec 2024 13:29:00 -0400</pubDate>
+      <guid>http://ltratcliff.com/posts/host_local_container/</guid>
+      <description>Host an NGINX container locally for remote viewing</description>
+    </item>
     <item>
       <title>Azure Application Services</title>
       <link>http://ltratcliff.com/posts/az_app_svc/</link>

@@ -6,8 +6,29 @@
     <description>Recent content in Tags on TR</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jun 2022 10:23:29 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 07 Dec 2024 13:29:00 -0400</lastBuildDate>
     <atom:link href="http://ltratcliff.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Containers</title>
+      <link>http://ltratcliff.com/tags/containers/</link>
+      <pubDate>Sat, 07 Dec 2024 13:29:00 -0400</pubDate>
+      <guid>http://ltratcliff.com/tags/containers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>http://ltratcliff.com/tags/docker/</link>
+      <pubDate>Sat, 07 Dec 2024 13:29:00 -0400</pubDate>
+      <guid>http://ltratcliff.com/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Podman</title>
+      <link>http://ltratcliff.com/tags/podman/</link>
+      <pubDate>Sat, 07 Dec 2024 13:29:00 -0400</pubDate>
+      <guid>http://ltratcliff.com/tags/podman/</guid>
+      <description></description>
+    </item>
     <item>
       <title>AKS</title>
       <link>http://ltratcliff.com/tags/aks/</link>
