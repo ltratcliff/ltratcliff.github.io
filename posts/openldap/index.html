@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Fun With Hugo | TR</title>
+    <title>OpenLDAP | TR</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Getting started with Hugo">
+    <meta name="description" content="Local OpenLDAP Exploration">
     <meta name="generator" content="Hugo 0.139.3">
     
     
@@ -34,30 +34,31 @@
     
 
     
-      <link rel="canonical" href="http://ltratcliff.com/posts/funwithhugo/">
+      <link rel="canonical" href="http://ltratcliff.com/posts/openldap/">
     
 
-    <meta property="og:url" content="http://ltratcliff.com/posts/funwithhugo/">
+    <meta property="og:url" content="http://ltratcliff.com/posts/openldap/">
   <meta property="og:site_name" content="TR">
-  <meta property="og:title" content="Fun With Hugo">
-  <meta property="og:description" content="Getting started with Hugo">
+  <meta property="og:title" content="OpenLDAP">
+  <meta property="og:description" content="Local OpenLDAP Exploration">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2021-11-06T13:40:19-04:00">
-    <meta property="article:modified_time" content="2021-11-06T13:40:19-04:00">
-    <meta property="article:tag" content="Golang">
-    <meta property="article:tag" content="Hugo">
+    <meta property="article:published_time" content="2024-12-14T10:27:11-05:00">
+    <meta property="article:modified_time" content="2024-12-14T10:27:11-05:00">
+    <meta property="article:tag" content="OpenLDAP">
+    <meta property="article:tag" content="Containers">
+    <meta property="article:tag" content="Python">
 
-  <meta itemprop="name" content="Fun With Hugo">
-  <meta itemprop="description" content="Getting started with Hugo">
-  <meta itemprop="datePublished" content="2021-11-06T13:40:19-04:00">
-  <meta itemprop="dateModified" content="2021-11-06T13:40:19-04:00">
-  <meta itemprop="wordCount" content="787">
-  <meta itemprop="keywords" content="Golang,Hugo">
+  <meta itemprop="name" content="OpenLDAP">
+  <meta itemprop="description" content="Local OpenLDAP Exploration">
+  <meta itemprop="datePublished" content="2024-12-14T10:27:11-05:00">
+  <meta itemprop="dateModified" content="2024-12-14T10:27:11-05:00">
+  <meta itemprop="wordCount" content="479">
+  <meta itemprop="keywords" content="OpenLDAP,Containers,Python">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Fun With Hugo">
-  <meta name="twitter:description" content="Getting started with Hugo">
+  <meta name="twitter:title" content="OpenLDAP">
+  <meta name="twitter:description" content="Local OpenLDAP Exploration">
 
       
     
@@ -182,28 +183,28 @@
       <aside class="instapaper_ignoref b helvetica tracked ttu">
           
         Posts
-      </aside><div id="sharing" class="mt3 ananke-socials"><a href="mailto:?&amp;body=http%3A%2F%2Fltratcliff.com%2Fposts%2Ffunwithhugo%2F&amp;subject=Fun&#43;With&#43;Hugo"
+      </aside><div id="sharing" class="mt3 ananke-socials"><a href="mailto:?&amp;body=http%3A%2F%2Fltratcliff.com%2Fposts%2Fopenldap%2F&amp;subject=OpenLDAP"
         class="ananke-social-link email no-underline"
         title="Share on Email" aria-label="Share on Email"
         target="_blank" rel="nofollow noopener noreferrer">
         <span class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z"/></svg>
                 
-              </span></a><a href="https://facebook.com/sharer/sharer.php?&amp;u=http%3A%2F%2Fltratcliff.com%2Fposts%2Ffunwithhugo%2F"
+              </span></a><a href="https://facebook.com/sharer/sharer.php?&amp;u=http%3A%2F%2Fltratcliff.com%2Fposts%2Fopenldap%2F"
         class="ananke-social-link facebook no-underline"
         title="Share on Facebook" aria-label="Share on Facebook"
         target="_blank" rel="nofollow noopener noreferrer">
         <span class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg>
                 
-              </span></a><a href="https://twitter.com/intent/tweet/?&amp;text=Getting&#43;started&#43;with&#43;Hugo&amp;url=http%3A%2F%2Fltratcliff.com%2Fposts%2Ffunwithhugo%2F"
+              </span></a><a href="https://twitter.com/intent/tweet/?&amp;text=Local&#43;OpenLDAP&#43;Exploration&amp;url=http%3A%2F%2Fltratcliff.com%2Fposts%2Fopenldap%2F"
         class="ananke-social-link x-twitter no-underline"
         title="Share on X" aria-label="Share on X"
         target="_blank" rel="nofollow noopener noreferrer">
         <span class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
                 
-              </span></a><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=http%3A%2F%2Fltratcliff.com%2Fposts%2Ffunwithhugo%2F&amp;summary=Getting&#43;started&#43;with&#43;Hugo&amp;title=Fun&#43;With&#43;Hugo&amp;url=http%3A%2F%2Fltratcliff.com%2Fposts%2Ffunwithhugo%2F"
+              </span></a><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=http%3A%2F%2Fltratcliff.com%2Fposts%2Fopenldap%2F&amp;summary=Local&#43;OpenLDAP&#43;Exploration&amp;title=OpenLDAP&amp;url=http%3A%2F%2Fltratcliff.com%2Fposts%2Fopenldap%2F"
         class="ananke-social-link linkedin no-underline"
         title="Share on LinkedIn" aria-label="Share on LinkedIn"
         target="_blank" rel="nofollow noopener noreferrer">
@@ -211,7 +212,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
                 
               </span></a></div>
-<h1 class="f1 athelas mt3 mb1">Fun With Hugo</h1>
+<h1 class="f1 athelas mt3 mb1">OpenLDAP</h1>
       
       <p class="tracked">
         By <strong>Tom Ratcliff</strong>
@@ -219,265 +220,141 @@
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2021-11-06T13:40:19-04:00">November 6, 2021</time>
+      <time class="f6 mv4 dib tracked" datetime="2024-12-14T10:27:11-05:00">December 14, 2024</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I&rsquo;ve been digging the Hugo static website generator.
-Getting up and running quickly using github.io pages and  Hugo was
-breeze. Here&rsquo;s a few things I&rsquo;ve learned over the last 2-3 days playing with Hugo</p>
-<h2 id="recommendations">Recommendations</h2>
-<p>This youtube playlist by giraffe academy was a great start.
-Shout out to Mike Dane for making this content</p>
-
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/qtIqKaDlqXo?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
-    </div>
-
-<hr>
-<h2 id="quickstart">Quickstart</h2>
-<p>The Official docs: <a href="https://gohugo.io/getting-started/quick-start/">here</a> help get you setup with installation, and a new project</p>
-<p>namely</p>
-<ol>
-<li><code>yum|apt|brew intall hugo</code></li>
-<li><code>hugo new site sitename</code>
-<ol>
-<li>Theme installation:
-<ol>
-<li><code>git init</code></li>
-<li><code>git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><code>hugo new posts/postname.md</code></li>
-</ol>
-<hr>
-<h2 id="themes">Themes</h2>
-<p>So. Many. Options.</p>
-<p><a href="https://themes.gohugo.io">Themes</a></p>
-<p>The quickstart recommends ananke, and that&rsquo;s what I stuck with. If you go through the youtube
-link above, Mike uses his own theme to help explain some hugo concepts (list pages, single pages, etc.)</p>
-<hr>
-<h2 id="developement">Developement</h2>
-<p>The easiest way to see your changes in real time is to use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo -D serve
-</span></span></code></pre></div><p>This will open a socket on <a href="http://localhost:1313">http://localhost:1313</a></p>
-<blockquote>
-<p>Changes made to the source code will reflect in real time (without the need to refresh)</p>
-</blockquote>
-<hr>
-<h2 id="archetypes">Archetypes</h2>
-<p>Archtypes are great for automating the front-matter (top metadata on posts above the &mdash;)
-I created one archtype to auto populate author, toc and tags for posts</p>
-<p>This is created by creating a .md file in the archetypes dir with a name matching the folder used in new posts
-ie: <code>archetypes -&gt; posts.md</code> will match any new post created by <code>hugo new posts/whatever.md</code></p>
-<p><img src="/images/fun_with_hugo/archetypes.png" alt=""></p>
-<p>This make ensure all new posts created with <code>hugo new posts/article.md</code> will have that front-matter</p>
-<hr>
-<h2 id="content">Content</h2>
-<p>This directory contains other directories and markdown files for content</p>
-<p><img src="/images/fun_with_hugo/content-tree.png" alt=""></p>
-<hr>
-<h2 id="layouts-aka-templates">Layouts (aka Templates)</h2>
-<p>These HTML templates make it easy to inject reusable html (think style, header, footer, etc.)
-into single pages and lists as well as static HTML (and go templating) into individual .md files</p>
-<p>Let&rsquo;s consider this directory structure:</p>
-<p><img src="/images/fun_with_hugo/layout_tree.png" alt=""></p>
-<h3 id="partials">Partials</h3>
-<p>Partials will take an entire html block and insert into a template (or shortcode, etc.).
-The <code>tag-cloud.html</code> partial above looks like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tagArray</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
-</span></span><span style="display:flex;"><span>  {{ <span style="color:#a6e22e">range</span> <span style="color:#a6e22e">$key</span>, <span style="color:#a6e22e">$value</span> <span style="color:#f92672">:=</span> .<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Data</span>.<span style="color:#a6e22e">mytechs</span>.<span style="color:#a6e22e">techs</span> }}
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">tagArray</span>.<span style="color:#a6e22e">push</span>([{{ <span style="color:#a6e22e">$key</span> }}, {{ <span style="color:#a6e22e">$value</span> }}])
-</span></span><span style="display:flex;"><span>  {{ <span style="color:#a6e22e">end</span> }}
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/wordcloud2.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="intro">Intro</h1>
+<p>I don&rsquo;t know LDAP very well. Had a project to connect our KubeFlow
+instance in K8S to a local Active Directory. The setup involved wiring
+our Dex configmap to AD. Official Dex docs <a href="https://dexidp.io/docs/connectors/ldap/" target="_blank">here</a>.</p>
+<p>The main info we needed were a service account to bind and the correct DNs for
+binding and searching. In order to learn some of these topics, figured it would
+be best to spin up my own instance and experiment.</p>
+<p>I found a great article on <a href="https://medium.com/@amrutha_20595/setting-up-openldap-server-with-docker-d38781c259b2" target="_blank">Medium</a>.
+Thanks to Amrutha for this write-up! However, it needed to be altered slightly
+in order to use a newer version of OpenLDAP on dockerhub (bitnami vs osisix).</p>
+<p>Git repo <a href="https://github.com/ltratcliff/OpenLDAP-Example" target="_blank">here</a>
+if you want to follow along.</p>
+<h1 id="create-the-openldap-container">Create the OpenLDAP container</h1>
+<p>First step is to create our OpenLDAP instance we will be exploring</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run --rm --name ldap <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --env LDAP_ADMIN_PASSWORD<span style="color:#f92672">=</span>admin <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --env LDAP_ROOT<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;dc=example,dc=in&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --env LDAP_PORT_NUMBER<span style="color:#f92672">=</span><span style="color:#ae81ff">389</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --publish 389:389 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --volume <span style="color:#e6db74">&#34;./ldifs/:/ldifs/&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --volume <span style="color:#e6db74">&#34;./schemas/:/schemas/&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --hostname <span style="color:#e6db74">&#39;ldap.example.in&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  bitnami/openldap:latest
+</span></span></code></pre></div><h1 id="explore">Explore</h1>
+<p>Now we can play!</p>
+<h2 id="exec-into-container">Exec into container</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker exec -it ldap /bin/bash
+</span></span></code></pre></div><h2 id="interact-with-ldap">Interact with LDAP</h2>
+<h3 id="create-ous-orgainaization-units">Create OUs (orgainaization Units).</h3>
+<p>Create a devops OU</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ldapadd -x -w admin -D <span style="color:#e6db74">&#34;cn=admin,dc=example,dc=in&#34;</span> <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># LDIF file to add organizational unit &#34;ou=devops&#34; under &#34;dc=example,dc=in&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">dn: ou=devops,dc=example,dc=in
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">objectClass: organizationalUnit
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ou: devops
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><p>Create an appdev OU</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># LDIF file to add organizational unit &#34;ou=appdev&#34; under &#34;dc=example,dc=in&#34;</span>
+</span></span><span style="display:flex;"><span>ldapadd -x -w admin -D <span style="color:#e6db74">&#34;cn=admin,dc=example,dc=in&#34;</span> <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">dn: ou=appdev,dc=example,dc=in
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">objectClass: organizationalUnit
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ou: appdev
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><h3 id="create-user-accounts">Create User accounts.</h3>
+<p>Create my account</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ldapadd -x -w admin -D <span style="color:#e6db74">&#34;cn=admin,dc=example,dc=in&#34;</span> <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># LDIF file to Create user &#34;ltratcliff&#34; in &#34;ou=appdev&#34; under &#34;dc=example,dc=in&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">dn: cn=ltratcliff,ou=appdev,dc=example,dc=in
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">objectClass: person
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cn: ltratcliff
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">sn: Tom
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">userPassword: Password1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><p>Create co-workers account</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># LDIF file to Create user &#34;dave&#34; in &#34;ou=devops&#34; under &#34;dc=example,dc=in&#34;</span>
+</span></span><span style="display:flex;"><span>ldapadd -x -w admin -D <span style="color:#e6db74">&#34;cn=admin,dc=example,dc=in&#34;</span> <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">dn: cn=dave,ou=devops,dc=example,dc=in
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">objectClass: inetOrgPerson
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cn: dave
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">sn: Dave
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">userPassword: Dave@123
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><h3 id="create-groups">Create Groups</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ldapadd -x -w admin -D <span style="color:#e6db74">&#34;cn=admin,dc=example,dc=in&#34;</span> <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Group: appdev-team
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">dn: cn=appdev-team,dc=example,dc=in
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">objectClass: top
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">objectClass: groupOfNames
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cn: appdev-team
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">description: App Development Team
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">member: cn=ltratcliff,ou=appdev,dc=example,dc=in
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">member: cn=dave,ou=devops,dc=example,dc=in
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Group: devops-team
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">dn: cn=devops-team,dc=example,dc=in
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">objectClass: top
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">objectClass: groupOfNames
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">cn: devops-team
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">description: DevOps Team
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">member: cn=dave,ou=devops,dc=example,dc=in
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><h3 id="modify-and-apply-memberof-attribute-to-users-in-groups">Modify and apply MemberOf attribute to Users in Groups.</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ldapadd -x -w admin -D <span style="color:#e6db74">&#34;cn=admin,dc=example,dc=in&#34;</span> <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">dn: cn=ltratcliff,ou=appdev,dc=example,dc=in
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">changetype: modify
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">add: memberOf
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">memberOf: cn=devops-team,dc=example,dc=in
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><h2 id="search">Search</h2>
+<h3 id="search-from-ldapsearch">Search from ldapsearch</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ldapsearch -x -b dc<span style="color:#f92672">=</span>example,dc<span style="color:#f92672">=</span>in -D <span style="color:#e6db74">&#34;cn=admin,dc=example,dc=in&#34;</span> -w admin -s sub <span style="color:#e6db74">&#34;objectclass=*&#34;</span>
+</span></span></code></pre></div><h3 id="search-from-python">Search from python</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> ldap3 <span style="color:#f92672">import</span> Server, Connection, ALL
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tag-wrapper&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 100%; height: 400px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">WordCloud</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#tag-wrapper&#34;</span>), {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">list</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">tagArray</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">drawOutOfBounds</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">shrinkToFit</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>    });
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p>This can then be used in a template via (like in the <code>tech.html</code> shortcode we will look at shortly):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;tag-cloud.html&#34;</span> . }}
-</span></span></code></pre></div><h3 id="shortcodes">Shortcodes</h3>
-<p>Shortcodes are similar. They are used as a way to insert go logic into a markdown file:</p>
-<p>A simple example from the docs (<code>year.html</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>{{ <span style="color:#a6e22e">now</span>.<span style="color:#a6e22e">Format</span> <span style="color:#e6db74">&#34;2006&#34;</span> }}
-</span></span></code></pre></div><p>Used in your markdown post via:</p>
-<pre tabindex="0"><code>{{&lt; year &gt;}}
-</code></pre><p>Will interpolate to the current year.</p>
-<p>You can also use variables defined in your front-matter like so:</p>
-<p>Front-Matter example:</p>
-<pre tabindex="0"><code class="language-yam" data-lang="yam">---
-title: &#34;Fun With Hugo&#34;
-var: &#34;test&#34;
-array: [1,2,3,4,5]
----
-</code></pre><p>Shortcode ex:</p>
-<pre tabindex="0"><code>{{&lt; param &#34;var&#34; &gt;}}
-{{&lt; param &#34;Title&#34; &gt;}}
-{{&lt; param &#34;array&#34; &gt;}}
-</code></pre><p>Output:</p>
-<p>test
-Fun With Hugo
-[1 2 3 4 5]</p>
-<p>Here&rsquo;s some more examples using slices, ranges, etc.</p>
-<p>The shortcode <code>rangeshortcode.html</code> contains this html/go:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">h3</span>&gt;<span style="color:#a6e22e">Shuffled</span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">h3</span>&gt;
-</span></span><span style="display:flex;"><span>{{ (<span style="color:#a6e22e">seq</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">5</span>) | <span style="color:#a6e22e">shuffle</span> }}
+</span></span><span style="display:flex;"><span>server <span style="color:#f92672">=</span> Server(<span style="color:#e6db74">&#39;localhost&#39;</span>, get_info<span style="color:#f92672">=</span>ALL)
+</span></span><span style="display:flex;"><span>dn <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cn=ltratcliff, ou=devops, dc=example, dc=in&#34;</span>
+</span></span><span style="display:flex;"><span>conn <span style="color:#f92672">=</span> Connection(server, dn, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Password1&#39;</span>, auto_bind<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">array</span> <span style="color:#f92672">:=</span> (<span style="color:#a6e22e">seq</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">5</span>) }}
-</span></span><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">list</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">slice</span> <span style="color:#e6db74">&#34;one&#34;</span> <span style="color:#e6db74">&#34;two&#34;</span> <span style="color:#e6db74">&#34;three&#34;</span> }}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#conn.search(&#39;dc=example,dc=in&#39;, &#39;(cn=*)&#39;, attributes=[&#39;*&#39;])</span>
+</span></span><span style="display:flex;"><span>conn<span style="color:#f92672">.</span>search(<span style="color:#e6db74">&#39;dc=example,dc=in&#39;</span>, <span style="color:#e6db74">&#39;(cn=ltratcliff)&#39;</span>, attributes<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;*&#39;</span>])
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">h4</span>&gt;<span style="color:#a6e22e">Range</span> <span style="color:#a6e22e">over</span> <span style="color:#a6e22e">array</span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">h4</span>&gt;
-</span></span><span style="display:flex;"><span>{{ <span style="color:#66d9ef">range</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">array</span> }}
-</span></span><span style="display:flex;"><span> {{ . }}
-</span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">end</span> }}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">h4</span>&gt;<span style="color:#a6e22e">Range</span> <span style="color:#a6e22e">with</span> <span style="color:#a6e22e">index</span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">h4</span>&gt;
-</span></span><span style="display:flex;"><span>{{ <span style="color:#66d9ef">range</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">elem_index</span>, <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">elem_val</span> <span style="color:#f92672">:=</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">array</span> }}
-</span></span><span style="display:flex;"><span> &lt;<span style="color:#a6e22e">p</span>&gt;
-</span></span><span style="display:flex;"><span> {{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">elem_index</span> }} <span style="color:#f92672">-</span> {{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">elem_val</span> }}
-</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">p</span>&gt;
-</span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">end</span> }}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">h4</span>&gt;<span style="color:#a6e22e">Slice</span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">h4</span>&gt;
-</span></span><span style="display:flex;"><span>{{ <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">list</span> }}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">h4</span>&gt;<span style="color:#a6e22e">Range</span> <span style="color:#a6e22e">Slice</span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">h4</span>&gt;
-</span></span><span style="display:flex;"><span>{{ <span style="color:#66d9ef">range</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">list</span> }}
-</span></span><span style="display:flex;"><span>  {{ . }}
-</span></span><span style="display:flex;"><span>{{ <span style="color:#a6e22e">end</span> }}
-</span></span></code></pre></div><p>When used with:</p>
-<pre tabindex="0"><code>{{&lt; rangeshortcode &gt;}}
-</code></pre><p>Will produce the following content in the post:</p>
-<h5>Shuffled</h5>
-[5 2 3 4 1]
-
-
-
-
-<h5>Range over array</h5>
-
- 1
-
- 2
-
- 3
-
- 4
-
- 5
-
-
-<h5>Range with index</h5>
-
- <p>
- 0 - 1
- </p>
-
- <p>
- 1 - 2
- </p>
-
- <p>
- 2 - 3
- </p>
-
- <p>
- 3 - 4
- </p>
-
- <p>
- 4 - 5
- </p>
-
-
-<h5>Slice</h5>
-[one two three]
-
-<h5>Range Slice</h5>
-
-  one
-
-  two
-
-  three
-
-
-<hr>
-<h2 id="public">Public</h2>
-<p>The public directory contains all of the files needed for your static site. These can placed in your httpd/nginx/etc. directory for serving.</p>
-<p>These files are built using:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># or to build draft posts</span>
-</span></span><span style="display:flex;"><span>hugo -D
-</span></span></code></pre></div><hr>
-<h2 id="static">Static</h2>
-<p>Static contains objects contained on your pages (ie: images, css, etc.)</p>
-<p>When placing images, javascript, etc. You can reference in your markdown/html like so.</p>
-<p>For a dir structure like this:</p>
-<p><img src="/images/fun_with_hugo/static-tree.png" alt=""></p>
-<p>Image example in markdown:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>![](/images/fun_with_hugo/content-tree.png)
-</span></span></code></pre></div><p>Javascript example in partial html:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/wordcloud2.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tag-wrapper&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 100%; height: 400px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">WordCloud</span>(document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;#tag-wrapper&#34;</span>), {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">list</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">tagArray</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">drawOutOfBounds</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">shrinkToFit</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>    });
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><hr>
-<h2 id="data">Data</h2>
-<p>Data contains yaml, json, toml files that can be referenced in other templates.</p>
-<p>For example, with this dir structure and yaml content:</p>
-<p><img src="/images/fun_with_hugo/data-tree.png" alt=""></p>
-<p>This can be referenced like so:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="background-color:#3c3d38"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">tagArray</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
-</span></span><span style="display:flex; background-color:#3c3d38"><span>  {{ <span style="color:#a6e22e">range</span> <span style="color:#a6e22e">$key</span>, <span style="color:#a6e22e">$value</span> <span style="color:#f92672">:=</span> .<span style="color:#a6e22e">Site</span>.<span style="color:#a6e22e">Data</span>.<span style="color:#a6e22e">mytechs</span>.<span style="color:#a6e22e">techs</span> }}
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">tagArray</span>.<span style="color:#a6e22e">push</span>([{{ <span style="color:#a6e22e">$key</span> }}, {{ <span style="color:#a6e22e">$value</span> }}])
-</span></span><span style="display:flex;"><span>  {{ <span style="color:#a6e22e">end</span> }}
-</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">tagArray</span>)
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Which will produce the following in the browser console:</p>
-<p><img src="/images/fun_with_hugo/webconsole.png" alt=""></p>
-<ul class="pa0">
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> conn<span style="color:#f92672">.</span>entries:
+</span></span><span style="display:flex;"><span>    print(entry)
+</span></span></code></pre></div><h2 id="modify-acls">Modify ACLs</h2>
+<p>Check oclAccess permission.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ldapsearch -Y EXTERNAL -Q -H ldapi:/// -LLL -o ldif-wrap<span style="color:#f92672">=</span>no -b cn<span style="color:#f92672">=</span>config <span style="color:#e6db74">&#39;(objectClass=olcDatabaseConfig)&#39;</span> olcAccess
+</span></span></code></pre></div><p>Modification to grant read access to the user &ldquo;ltratcliff&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ldapmodify -H ldapi:/// -Y EXTERNAL <span style="color:#e6db74">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">dn: olcDatabase={1}mdb,cn=config
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">changetype: modify
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">add: olcAccess
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">olcAccess: {2}to * by dn=&#34;cn=ltratcliff,ou=devops,dc=example,dc=in&#34; read
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list di">
-     <a href="/tags/golang/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Golang</a>
+     <a href="/tags/openldap/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">OpenLDAP</a>
    </li>
   
    <li class="list di">
-     <a href="/tags/hugo/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Hugo</a>
+     <a href="/tags/containers/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Containers</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/python/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python</a>
    </li>
   
 </ul>
@@ -512,21 +389,22 @@ Fun With Hugo
     <p class="f5 b mb3">What&#39;s in this posts</p>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#recommendations">Recommendations</a></li>
-    <li><a href="#quickstart">Quickstart</a></li>
-    <li><a href="#themes">Themes</a></li>
-    <li><a href="#developement">Developement</a></li>
-    <li><a href="#archetypes">Archetypes</a></li>
-    <li><a href="#content">Content</a></li>
-    <li><a href="#layouts-aka-templates">Layouts (aka Templates)</a>
+    <li><a href="#exec-into-container">Exec into container</a></li>
+    <li><a href="#interact-with-ldap">Interact with LDAP</a>
       <ul>
-        <li><a href="#partials">Partials</a></li>
-        <li><a href="#shortcodes">Shortcodes</a></li>
+        <li><a href="#create-ous-orgainaization-units">Create OUs (orgainaization Units).</a></li>
+        <li><a href="#create-user-accounts">Create User accounts.</a></li>
+        <li><a href="#create-groups">Create Groups</a></li>
+        <li><a href="#modify-and-apply-memberof-attribute-to-users-in-groups">Modify and apply MemberOf attribute to Users in Groups.</a></li>
       </ul>
     </li>
-    <li><a href="#public">Public</a></li>
-    <li><a href="#static">Static</a></li>
-    <li><a href="#data">Data</a></li>
+    <li><a href="#search">Search</a>
+      <ul>
+        <li><a href="#search-from-ldapsearch">Search from ldapsearch</a></li>
+        <li><a href="#search-from-python">Search from python</a></li>
+      </ul>
+    </li>
+    <li><a href="#modify-acls">Modify ACLs</a></li>
   </ul>
 </nav>
   </div>
@@ -539,7 +417,7 @@ Fun With Hugo
     <ul class="pa0 list">
 	   
 	     <li  class="mb2">
-          <a href="/posts/offline-go-modules/">Offline Go Modules</a>
+          <a href="/posts/host_local_container/">Host a Local Container Externally</a>
         </li>
 	    
     </ul>

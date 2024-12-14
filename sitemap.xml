@@ -3,12 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://ltratcliff.com/categories/</loc>
-    <lastmod>2024-12-07T13:29:00-04:00</lastmod>
+    <lastmod>2024-12-14T10:27:11-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>http://ltratcliff.com/tags/containers/</loc>
-    <lastmod>2024-12-07T13:29:00-04:00</lastmod>
+    <lastmod>2024-12-14T10:27:11-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/categories/ldap/</loc>
+    <lastmod>2024-12-14T10:27:11-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/tags/openldap/</loc>
+    <lastmod>2024-12-14T10:27:11-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/posts/openldap/</loc>
+    <lastmod>2024-12-14T10:27:11-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/posts/</loc>
+    <lastmod>2024-12-14T10:27:11-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/tags/python/</loc>
+    <lastmod>2024-12-14T10:27:11-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/tags/</loc>
+    <lastmod>2024-12-14T10:27:11-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://ltratcliff.com/</loc>
+    <lastmod>2024-12-14T10:27:11-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -28,21 +63,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>http://ltratcliff.com/tags/podman/</loc>
-    <lastmod>2024-12-07T13:29:00-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://ltratcliff.com/posts/</loc>
-    <lastmod>2024-12-07T13:29:00-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://ltratcliff.com/tags/</loc>
-    <lastmod>2024-12-07T13:29:00-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://ltratcliff.com/</loc>
     <lastmod>2024-12-07T13:29:00-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -153,11 +173,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>http://ltratcliff.com/posts/glances_on_silverblue/</loc>
-    <lastmod>2021-11-11T19:08:27-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://ltratcliff.com/tags/python/</loc>
     <lastmod>2021-11-11T19:08:27-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
